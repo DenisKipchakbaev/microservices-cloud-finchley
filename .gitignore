@@ -1,0 +1,25 @@
+# Java class files
+*.class
+
+# Eclipse project files
+.classpath
+.project
+.settings/
+
+# STS project files
+.springBeans
+
+# Intellij project files
+*.iml
+*.ipr
+*.iws
+.idea/
+
+.DS_Store/
+/target
+
+/target
+/target/
+**/target/
+
+.DS_Store

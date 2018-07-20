@@ -1,0 +1,8 @@
+spring:
+  application:
+    name: zuul
+  profiles:
+    active: default
+  cloud:
+    config:
+      enabled: true

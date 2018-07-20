@@ -1,0 +1,72 @@
+{
+	"info": {
+		"_postman_id": "2490f97d-ae6a-4180-8349-5c386ca5b9f3",
+		"name": "config-server final",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "GET default profile config licensing service",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {},
+				"url": {
+					"raw": "http://localhost:8888/licensingservice/default",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8888",
+					"path": [
+						"licensingservice",
+						"default"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GET DEV config licensing service",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {},
+				"url": {
+					"raw": "http://localhost:8888/licensingservice/dev",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8888",
+					"path": [
+						"licensingservice",
+						"dev"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GET PROD config licensing service",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {},
+				"url": {
+					"raw": "http://localhost:8888/licensingservice/prod",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8888",
+					"path": [
+						"licensingservice",
+						"prod"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

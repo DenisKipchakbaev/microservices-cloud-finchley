@@ -1,0 +1,257 @@
+{
+	"info": {
+		"_postman_id": "6d5feecd-e23a-4ce8-aa68-48a1dcbb2aa1",
+		"name": "auth-server final",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Get token USER",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "843278f2-e653-4c16-ab64-b52e983f93c9",
+						"type": "text/javascript",
+						"exec": [
+							"var jsonData = JSON.parse(responseBody);",
+							"postman.setEnvironmentVariable(\"access_token\", jsonData.access_token);"
+						]
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "thisissecret",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "eagleeye",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/x-www-form-urlencoded"
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "grant_type",
+							"value": "password",
+							"type": "text",
+							"description": ""
+						},
+						{
+							"key": "scope",
+							"value": "webclient",
+							"type": "text",
+							"description": ""
+						},
+						{
+							"key": "username",
+							"value": "john.carnell",
+							"type": "text",
+							"description": ""
+						},
+						{
+							"key": "password",
+							"value": "password1",
+							"type": "text",
+							"description": ""
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:5555/api/authenticationservice/oauth/token",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5555",
+					"path": [
+						"api",
+						"authenticationservice",
+						"oauth",
+						"token"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get token ADMIN",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "174360a9-17b3-44c9-9663-045de6923cc9",
+						"type": "text/javascript",
+						"exec": [
+							"var jsonData = JSON.parse(responseBody);",
+							"postman.setEnvironmentVariable(\"access_token\", jsonData.access_token);"
+						]
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "thisissecret",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "eagleeye",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/x-www-form-urlencoded"
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "grant_type",
+							"value": "password",
+							"type": "text",
+							"description": ""
+						},
+						{
+							"key": "scope",
+							"value": "webclient",
+							"type": "text",
+							"description": ""
+						},
+						{
+							"key": "username",
+							"value": "william.woodward",
+							"type": "text",
+							"description": ""
+						},
+						{
+							"key": "password",
+							"value": "password2",
+							"type": "text",
+							"description": ""
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:5555/api/authenticationservice/oauth/token",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5555",
+					"path": [
+						"api",
+						"authenticationservice",
+						"oauth",
+						"token"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "auth callback /user",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer {{access_token}}"
+					}
+				],
+				"body": {},
+				"url": {
+					"raw": "http://localhost:5555/api/authenticationservice/user",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5555",
+					"path": [
+						"api",
+						"authenticationservice",
+						"user"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "auth callback /user direct",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer {{access_token}}"
+					}
+				],
+				"body": {},
+				"url": {
+					"raw": "http://localhost:8901/user",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8901",
+					"path": [
+						"user"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"id": "e4c4c5e5-7afa-4e6d-8170-7d56a06c93c7",
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"id": "3e000312-7378-42de-b2ff-66394a6675df",
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	]
+}

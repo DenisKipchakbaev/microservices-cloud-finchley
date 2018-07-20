@@ -1,0 +1,36 @@
+logging:
+  file: target/zuul.log
+  level: #Setting logging levels
+    com.netflix: WARN
+    org.springframework.web: DEBUG
+    es.in2.cloud: DEBUG
+
+server.port: ${PORT:5555}
+
+eureka:
+  instance:
+    preferIpAddress: true
+  client:
+    registerWithEureka: true
+    fetchRegistry: true
+    serviceUrl:
+        defaultZone: http://localhost:8761/eureka/
+
+
+# ---START Temporary fix for bug with default hystrix timeouts
+#   https://github.com/spring-cloud/spring-cloud-netflix/issues/2606         
+zuul:
+  ribbonIsolationStrategy: THREAD
+
+hystrix.command.licensingservice.execution.isolation.thread.timeoutInMilliseconds: 6500
+#hystrix.command.authserver.execution.isolation.thread.timeoutInMilliseconds: 25000
+# ---END Temporary fix
+
+spring:
+  zipkin:
+    baseUrl:  http://localhost:9411/
+    sender:
+      type: web
+  sleuth:
+    sampler:
+      probability: 1.0  #send 100% (1) of the requests to Zipkin

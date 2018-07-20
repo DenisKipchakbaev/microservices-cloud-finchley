@@ -1,0 +1,86 @@
+{
+	"info": {
+		"_postman_id": "1ca07b2a-796f-4c0f-9eb2-084adae3bc66",
+		"name": "zuul-server final",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "zuul routes",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {},
+				"url": {
+					"raw": "localhost:5555/routes",
+					"host": [
+						"localhost"
+					],
+					"port": "5555",
+					"path": [
+						"routes"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "zuul static route test in2",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {},
+				"url": {
+					"raw": "localhost:5555/api/in2",
+					"host": [
+						"localhost"
+					],
+					"port": "5555",
+					"path": [
+						"api",
+						"in2"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "zuul env configuration",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {},
+				"url": {
+					"raw": "localhost:5555/env",
+					"host": [
+						"localhost"
+					],
+					"port": "5555",
+					"path": [
+						"env"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "zuul refresh config",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {},
+				"url": {
+					"raw": "localhost:5555/refresh",
+					"host": [
+						"localhost"
+					],
+					"port": "5555",
+					"path": [
+						"refresh"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

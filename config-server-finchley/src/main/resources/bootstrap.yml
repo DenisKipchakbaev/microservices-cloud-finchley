@@ -1,0 +1,8 @@
+spring:
+  application:
+    name: configserver
+  cloud:
+    config:
+      server:
+        encrypt:
+          enabled: false #disable the server-side decryption of properties in Spring Cloud Config to not expose decrypted passwords
