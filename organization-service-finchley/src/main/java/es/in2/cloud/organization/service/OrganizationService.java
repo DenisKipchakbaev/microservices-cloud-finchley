@@ -5,6 +5,8 @@ import java.util.UUID;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import com.netflix.hystrix.contrib.javanica.annotation.HystrixCommand;
+
 import es.in2.cloud.organization.events.source.SimpleSourceBean;
 import es.in2.cloud.organization.model.Organization;
 import es.in2.cloud.organization.repository.OrganizationRepository;
@@ -17,6 +19,7 @@ public class OrganizationService {
     @Autowired
     SimpleSourceBean simpleSourceBean;
 
+    @HystrixCommand
     public Organization getOrg(String organizationId) {
         return orgRepository.findById(organizationId).orElse(new Organization());
     }

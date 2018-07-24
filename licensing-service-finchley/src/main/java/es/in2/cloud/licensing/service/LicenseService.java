@@ -68,8 +68,8 @@ public class LicenseService {
         return organization;
     }
 
-    
-    public License getLicense(String organizationId,String licenseId) {
+    @HystrixCommand
+    public License getLicense(String organizationId, String licenseId) {
         License license = licenseRepository.findByOrganizationIdAndLicenseId(organizationId, licenseId);
 
         Organization org = getOrganization(organizationId);
@@ -96,7 +96,6 @@ public class LicenseService {
                 .withComment(config.getExampleProperty());
     }
 
-    @HystrixCommand
     private Organization getOrganization(String organizationId) {
         return organizationRestClient.getOrganization(organizationId);
     }

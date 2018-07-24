@@ -28,16 +28,21 @@ services:
         - /var/run/docker.sock:/var/run/docker.sock
         
   database:
-      image: postgres:9.5
+      image: postgres:11
       ports:
         - "5432:5432"
       environment:
         POSTGRES_USER: postgres
         POSTGRES_PASSWORD: p0stgr@s
         POSTGRES_DB: eagle_eye_local
+ 
+  adminer:
+    image: adminer
+    restart: always
+    ports:
+      - 9095:8080
 
   zipkin:
     image: openzipkin/zipkin
     ports:
       - 9411:9411
-

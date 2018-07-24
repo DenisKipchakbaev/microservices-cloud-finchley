@@ -1,0 +1,18 @@
+server:
+  port: ${PORT:8989}
+  
+logging:
+  file: target/turbinestream.log
+  level: #Setting logging levels
+    com.netflix: WARN
+    org.springframework.web: DEBUG
+    es.in2.cloud: DEBUG
+    
+eureka:
+  instance:
+    preferIpAddress: true
+  client:
+    registerWithEureka: true
+    fetchRegistry: true
+    serviceUrl:
+      defaultZone: http://localhost:8761/eureka/

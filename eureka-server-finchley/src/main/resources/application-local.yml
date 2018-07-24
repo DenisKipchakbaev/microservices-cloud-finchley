@@ -5,4 +5,4 @@ management.endpoints.web.exposure.include: "*"
 management.endpoint.health.showDetails: when-authorized #show details in actuator/health endpoint
 
 #Heartbeat interval. Do not change default interval for production. Default 30
-eureka.instance.leaseRenewalIntervalInSeconds: 5
+eureka.instance.leaseRenewalIntervalInSeconds: 30

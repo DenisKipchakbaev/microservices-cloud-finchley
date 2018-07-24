@@ -14,10 +14,12 @@ public class ResourceServerConfiguration extends ResourceServerConfigurerAdapter
     @Override
     public void configure(HttpSecurity http) throws Exception{
         http
-                .authorizeRequests()
+        	.authorizeRequests()
+                .antMatchers("/actuator/**") //TODO secure actuator
+					.permitAll()
                 .antMatchers(HttpMethod.DELETE, "/v1/organizations/**")
-                .hasRole("ADMIN")
+                	.hasRole("ADMIN")
                 .anyRequest()
-                .authenticated();
+                	.authenticated();
     }
 }

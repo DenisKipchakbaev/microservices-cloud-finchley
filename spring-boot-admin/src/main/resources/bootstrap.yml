@@ -1,0 +1,6 @@
+spring:
+  application:
+    name: springbootadmin
+  profiles:
+    active:
+      - insecure

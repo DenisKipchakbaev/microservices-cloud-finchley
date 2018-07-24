@@ -1,4 +1,4 @@
-package es.in2.cloud.licensing.security;
+package es.in2.cloud.auth.security;
 
 
 import org.springframework.context.annotation.Configuration;
@@ -12,17 +12,10 @@ public class ResourceServerConfiguration extends ResourceServerConfigurerAdapter
     public void configure(HttpSecurity http) throws Exception {
     	http
     		.authorizeRequests()
-//    			.antMatchers("/**") //open /proxy.stream for hystrix dashboard
-//    				.permitAll()
-    			.antMatchers("/actuator/**") //TODO secure actuator
+    			.antMatchers("/actuator/health") //TODO secure actuator
     				.permitAll()
-//    			.antMatchers("/webjars/**")
-//    				.permitAll()
-    			
-                .antMatchers("/v1/organizations/**")
-                	.hasRole("ADMIN")
-                .anyRequest()
-                	.authenticated();
+    			.anyRequest()
+    				.authenticated();
     }
     
 }

@@ -1,0 +1,9 @@
+spring:
+  application:
+    name: hystrixdashboard
+  profiles:
+    active:
+      default
+  cloud:
+    config:
+      enabled: true
