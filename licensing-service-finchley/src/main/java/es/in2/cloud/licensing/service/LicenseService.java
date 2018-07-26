@@ -68,7 +68,9 @@ public class LicenseService {
         return organization;
     }
 
-    @HystrixCommand
+    @HystrixCommand(
+    		commandProperties = {
+    				@HystrixProperty(name = "execution.isolation.strategy", value = "SEMAPHORE") }) //temporary fix for FIXME BeanCreationException: Error creating bean with name 'scopedTarget.oauth2ClientContext': Scope 'request' is not active for the current thread
     public License getLicense(String organizationId, String licenseId) {
         License license = licenseRepository.findByOrganizationIdAndLicenseId(organizationId, licenseId);
 

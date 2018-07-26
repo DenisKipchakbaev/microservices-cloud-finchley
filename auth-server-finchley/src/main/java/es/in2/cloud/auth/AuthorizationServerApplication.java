@@ -15,7 +15,6 @@ import org.springframework.web.bind.annotation.RestController;
 @SpringBootApplication
 @RestController
 @EnableEurekaClient
-@EnableResourceServer
 public class AuthorizationServerApplication{
 
 	@RequestMapping(value = { "/user" }, produces = "application/json")

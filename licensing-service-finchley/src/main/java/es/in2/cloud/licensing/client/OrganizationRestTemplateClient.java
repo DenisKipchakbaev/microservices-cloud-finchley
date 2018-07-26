@@ -5,18 +5,18 @@ import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpMethod;
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.oauth2.client.OAuth2RestOperations;
 import org.springframework.stereotype.Component;
 
 import es.in2.cloud.licensing.model.Organization;
 import es.in2.cloud.licensing.repository.OrganizationRedisRepository;
 import es.in2.cloud.licensing.util.UserContext;
 
-import org.springframework.security.oauth2.client.OAuth2RestTemplate;
-
 @Component
 public class OrganizationRestTemplateClient {
-    @Autowired
-    OAuth2RestTemplate restTemplate;
+    
+	@Autowired
+    OAuth2RestOperations restTemplate;
 
     @Autowired
     OrganizationRedisRepository orgRedisRepo;

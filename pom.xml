@@ -8,11 +8,18 @@
 	<version>0.0.1-SNAPSHOT</version>
 	<artifactId>spring-cloud-finchley-parent-pom</artifactId>
 	<packaging>pom</packaging>
+	
 
 
 	<name>spring-cloud-finchley-parent-pom</name>
 	<description>Parent Pom for Spring Cloud Finchley sample project</description>
-
+	
+	<developers>
+		<developer>
+			<name>Denis Kipchakbaev</name>
+		</developer>
+	</developers>
+	
 	<parent>
 		<groupId>org.springframework.boot</groupId>
 		<artifactId>spring-boot-starter-parent</artifactId>
@@ -25,6 +32,8 @@
 		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
 		<java.version>1.8</java.version>
 		<spring-cloud.version>Finchley.RELEASE</spring-cloud.version>
+		<dockerfile-maven-version>1.4.3</dockerfile-maven-version>
+		<docker.repository.name>kipc</docker.repository.name>
 	</properties>
 
 	<dependencyManagement>
@@ -40,6 +49,30 @@
 	</dependencyManagement>
 	<build>
 		<plugins>
+			<!-- We use the Resources plugin to filer Dockerfile and run.sh, it inserts actual JAR filename -->
+			<!-- The final Dockerfile will be created in target/dockerfile/Dockerfile -->
+<!-- 			<plugin> -->
+<!-- 			    <artifactId>maven-resources-plugin</artifactId> -->
+<!-- 			    <executions> -->
+<!-- 			        <execution> -->
+<!-- 			            <id>copy-resources</id> -->
+<!-- 			            here the phase you need -->
+<!-- 			            <phase>validate</phase> -->
+<!-- 			            <goals> -->
+<!-- 			                <goal>copy-resources</goal> -->
+<!-- 			            </goals> -->
+<!-- 			            <configuration> -->
+<!-- 			                <outputDirectory>${basedir}</outputDirectory> -->
+<!-- 			                <resources> -->
+<!-- 			                    <resource> -->
+<!-- 			                        <directory>src/main/docker</directory> -->
+<!-- 			                        <filtering>true</filtering> -->
+<!-- 			                    </resource> -->
+<!-- 			                </resources> -->
+<!-- 			            </configuration> -->
+<!-- 			        </execution> -->
+<!-- 			    </executions> -->
+<!-- 			</plugin> -->
 			<plugin>
 				<groupId>org.springframework.boot</groupId>
 				<artifactId>spring-boot-maven-plugin</artifactId>
@@ -50,6 +83,29 @@
 						</goals>
 					</execution>
 				</executions>
+			</plugin>
+			<plugin>
+			  <groupId>com.spotify</groupId>
+			  <artifactId>dockerfile-maven-plugin</artifactId>
+			  <version>${dockerfile-maven-version}</version>
+			  <executions>
+			    <execution>
+			      <id>default</id>
+			      <goals>
+			        <goal>build</goal>
+<!-- 			        <goal>push</goal> -->
+			      </goals>
+			    </execution>
+			  </executions>
+			  <configuration>
+			    <repository>${docker.repository.name}/${project.name}</repository>
+			    <tag>${project.version}</tag>
+			    <buildArgs>
+			      <JAR_FILE>${project.build.finalName}.jar</JAR_FILE>
+			      <PROJECT_NAME>${project.name}</PROJECT_NAME>
+			      <DEVELOPER_NAME>${project.developers[0].name}</DEVELOPER_NAME>
+			    </buildArgs>
+			  </configuration>
 			</plugin>
 		</plugins>
 	</build>

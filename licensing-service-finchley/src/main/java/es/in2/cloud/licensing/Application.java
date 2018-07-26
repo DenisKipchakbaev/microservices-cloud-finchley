@@ -12,46 +12,71 @@ import org.springframework.cloud.openfeign.EnableFeignClients;
 import org.springframework.cloud.stream.annotation.EnableBinding;
 import org.springframework.cloud.stream.messaging.Sink;
 import org.springframework.context.annotation.Bean;
+import org.springframework.data.redis.connection.RedisStandaloneConfiguration;
+import org.springframework.data.redis.connection.jedis.JedisClientConfiguration;
+import org.springframework.data.redis.connection.jedis.JedisClientConfiguration.JedisClientConfigurationBuilder;
 import org.springframework.data.redis.connection.jedis.JedisConnectionFactory;
 import org.springframework.data.redis.core.RedisTemplate;
 import org.springframework.security.oauth2.client.OAuth2ClientContext;
+import org.springframework.security.oauth2.client.OAuth2RestOperations;
 import org.springframework.security.oauth2.client.OAuth2RestTemplate;
 import org.springframework.security.oauth2.client.resource.OAuth2ProtectedResourceDetails;
-import org.springframework.security.oauth2.config.annotation.web.configuration.EnableResourceServer;
 
 import es.in2.cloud.licensing.config.ServiceConfig;
 
 @EnableCircuitBreaker
 @EnableBinding(Sink.class)
-@EnableResourceServer
 @EnableFeignClients
-@SpringBootApplication
 @EnableEurekaClient
+@SpringBootApplication
 public class Application {
 	
     @Autowired
     private ServiceConfig serviceConfig;
     
-    private static final Logger logger = LoggerFactory.getLogger(Application.class);
+    private static final Logger log = LoggerFactory.getLogger(Application.class);
 
 	public static void main(String[] args) {
 		SpringApplication.run(Application.class, args);
 	}
+
+//	@Bean
+//    public RequestInterceptor oauth2FeignRequestInterceptor() {
+//        return requestTemplate -> {
+//            Object details = SecurityContextHolder.getContext().getAuthentication().getDetails();
+//            if (details instanceof OAuth2AuthenticationDetails) {
+//                String tokenValue = ((OAuth2AuthenticationDetails) details).getTokenValue();
+//                requestTemplate.header("Authorization", "bearer " + tokenValue);
+//            }
+//        };
+//    }
 	
 	@Bean
-    @LoadBalanced //Fix for 'UnknownHostException: zuulservice'
-    public OAuth2RestTemplate oauth2RestTemplate(OAuth2ClientContext oauth2ClientContext,
-                                                 OAuth2ProtectedResourceDetails details) {
-        return new OAuth2RestTemplate(details, oauth2ClientContext);
+    @LoadBalanced //Fix for 'UnknownHostException: zuul'
+    public OAuth2RestOperations oauth2RestTemplate(
+    		OAuth2ProtectedResourceDetails resource, 
+    		OAuth2ClientContext context) {
+        return new OAuth2RestTemplate(resource, context);
     }
 	
 	@Bean
-    public JedisConnectionFactory jedisConnectionFactory() {
-        JedisConnectionFactory jedisConnFactory = new JedisConnectionFactory();
-        jedisConnFactory.setHostName( serviceConfig.getRedisServer());
-        jedisConnFactory.setPort( serviceConfig.getRedisPort() );
-        return jedisConnFactory;
+    JedisConnectionFactory jedisConnectionFactory() {
+
+        RedisStandaloneConfiguration redisStandaloneConfiguration = new RedisStandaloneConfiguration();
+        redisStandaloneConfiguration.setHostName(serviceConfig.getRedisServer());
+        redisStandaloneConfiguration.setPort(serviceConfig.getRedisPort());
+//        redisStandaloneConfiguration.setDatabase(0);
+//        redisStandaloneConfiguration.setPassword(RedisPassword.of("password"));
+
+        JedisClientConfigurationBuilder jedisClientConfiguration = JedisClientConfiguration.builder();
+//        jedisClientConfiguration.connectTimeout(Duration.ofSeconds(60));// 60s connection timeout
+
+        JedisConnectionFactory jedisConFactory = new JedisConnectionFactory(redisStandaloneConfiguration,
+                jedisClientConfiguration.build());
+
+        return jedisConFactory;
     }
+	
 
     @Bean
     public RedisTemplate<String, Object> redisTemplate() {
