@@ -45,4 +45,4 @@ java -Djava.security.egd=file:/dev/./urandom                              \
      -Dspring.zipkin.baseUrl=$ZIPKIN_URI                                  \
      -Dsecurity.oauth2.resource.userInfoUri=$AUTHSERVER_URI               \
      -Dspring.profiles.active=$PROFILE 					  \
-     -jar /usr/local/licensingservice/@project.build.finalName@.jar
+     -jar /usr/local/@project.name@/@project.build.finalName@.jar

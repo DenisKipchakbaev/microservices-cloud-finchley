@@ -12,7 +12,7 @@
 	<parent>
 		<groupId>es.in2.cloud</groupId>
 		<artifactId>spring-cloud-finchley-parent-pom</artifactId>
-		<version>0.0.1-SNAPSHOT</version>
+		<version>0.0.1</version>
 	</parent>
 
 	<properties>

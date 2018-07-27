@@ -5,7 +5,7 @@
 	<modelVersion>4.0.0</modelVersion>
 
 	<groupId>es.in2.cloud</groupId>
-	<version>0.0.1-SNAPSHOT</version>
+	<version>0.0.1</version>
 	<artifactId>spring-cloud-finchley-parent-pom</artifactId>
 	<packaging>pom</packaging>
 	
@@ -49,30 +49,33 @@
 	</dependencyManagement>
 	<build>
 		<plugins>
-			<!-- We use the Resources plugin to filer Dockerfile and run.sh, it inserts actual JAR filename -->
-			<!-- The final Dockerfile will be created in target/dockerfile/Dockerfile -->
-<!-- 			<plugin> -->
-<!-- 			    <artifactId>maven-resources-plugin</artifactId> -->
-<!-- 			    <executions> -->
-<!-- 			        <execution> -->
-<!-- 			            <id>copy-resources</id> -->
-<!-- 			            here the phase you need -->
-<!-- 			            <phase>validate</phase> -->
-<!-- 			            <goals> -->
-<!-- 			                <goal>copy-resources</goal> -->
-<!-- 			            </goals> -->
-<!-- 			            <configuration> -->
-<!-- 			                <outputDirectory>${basedir}</outputDirectory> -->
-<!-- 			                <resources> -->
-<!-- 			                    <resource> -->
-<!-- 			                        <directory>src/main/docker</directory> -->
-<!-- 			                        <filtering>true</filtering> -->
-<!-- 			                    </resource> -->
-<!-- 			                </resources> -->
-<!-- 			            </configuration> -->
-<!-- 			        </execution> -->
-<!-- 			    </executions> -->
-<!-- 			</plugin> -->
+			<!-- Using the Resources plugin to filter run.sh, 
+			it inserts actual JAR filename and directory name for each module -->
+			<plugin>
+			    <artifactId>maven-resources-plugin</artifactId>
+			    <executions>
+			        <execution>
+			            <id>copy-resources</id>
+						<!-- here the phase you need -->
+			            <phase>validate</phase>
+			            <goals>
+			                <goal>copy-resources</goal>
+			            </goals>
+			            <configuration>
+			                <outputDirectory>${basedir}/target</outputDirectory>
+			                <resources>
+			                	<resource>
+						            <directory>${basedir}</directory>
+						            <filtering>true</filtering>
+						            <includes>
+						                <include>run.sh</include>
+						            </includes>
+						        </resource>
+			                </resources>
+			            </configuration>
+			        </execution>
+			    </executions>
+			</plugin>
 			<plugin>
 				<groupId>org.springframework.boot</groupId>
 				<artifactId>spring-boot-maven-plugin</artifactId>
@@ -84,6 +87,8 @@
 					</execution>
 				</executions>
 			</plugin>
+			<!--Integrate building docker image steps with maven steps, mvn package will build a docker image,
+			mvn deploy will push the image to the repo -->
 			<plugin>
 			  <groupId>com.spotify</groupId>
 			  <artifactId>dockerfile-maven-plugin</artifactId>
@@ -93,7 +98,7 @@
 			      <id>default</id>
 			      <goals>
 			        <goal>build</goal>
-<!-- 			        <goal>push</goal> -->
+		        	<goal>push</goal>
 			      </goals>
 			    </execution>
 			  </executions>

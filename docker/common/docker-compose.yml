@@ -1,12 +1,59 @@
 version: '2'
 services:
+
+  zookeeper:
+    image: wurstmeister/zookeeper
+    ports:
+      - "2181:2181"
+
+  kafka:
+    image: wurstmeister/kafka:2.11-1.0.1
+    ports:
+      - "9092:9092" #TODO can't scale kafka instances with this setup https://github.com/wurstmeister/kafka-docker/issues/211
+    environment:
+      KAFKA_ADVERTISED_HOST_NAME: localhost
+      KAFKA_ZOOKEEPER_CONNECT: zookeeper:2181
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock
+  
+  redis:
+      image: redis:alpine
+      ports:
+        - 6379:6379
+        
+  logspout:
+      image: gliderlabs/logspout
+      command: syslog://logs2.papertrailapp.com:39865
+      volumes:
+        - /var/run/docker.sock:/var/run/docker.sock
+        
+  database:
+      image: postgres:11
+      ports:
+        - "5432:5432"
+      environment:
+        POSTGRES_USER: postgres
+        POSTGRES_PASSWORD: p0stgr@s
+        POSTGRES_DB: eagle_eye_local
+ 
+  adminer:
+    image: adminer
+    restart: always
+    ports:
+      - 8988:8080
+
+  zipkin:
+    image: openzipkin/zipkin
+    ports:
+      - 9411:9411
+  
   eurekaserver:
-     image: kipc/sandbox-eureka-server:${BUILD_NAME}
+     image: kipc/eureka-server-finchley:${BUILD_NAME}
      ports:
          - "8761:8761"
          
   configserver:
-      image: kipc/sandbox-config-server:${BUILD_NAME}
+      image: kipc/config-server-finchley:${BUILD_NAME}
       ports:
          - "8888:8888"
       environment:
@@ -15,7 +62,7 @@ services:
          ENCRYPT_KEY:       "IMSYMMETRIC"
   
   zuulserver:
-      image: kipc/sandbox-zuul-server:${BUILD_NAME}
+      image: kipc/zuul-gateway-finchley:${BUILD_NAME}
       ports:
         - "5555:5555"
       environment:
@@ -28,31 +75,9 @@ services:
         EUREKASERVER_PORT:   "8761"
         CONFIGSERVER_PORT:   "8888"
         ZIPKIN_PORT:         "9411"
-  
-  licensingservice:
-      image: kipc/sandbox-licensing-service:${BUILD_NAME}
-      ports:
-        - "8080:8080"
-      environment:
-        PROFILE: "default"
-        SERVER_PORT: "8080"
-        CONFIGSERVER_URI: "http://configserver:8888"
-        EUREKASERVER_URI: "http://eurekaserver:8761/eureka/"
-        ZIPKIN_URI: "http://zipkin:9411"
-        KAFKASERVER_URI: "kafkaserver"
-        ZKSERVER_URI: "kafkaserver"
-        AUTHSERVER_URI:   "http://authenticationservice:8901/user"
-        DATABASESERVER_PORT: "5432"
-        EUREKASERVER_PORT:   "8761"
-        CONFIGSERVER_PORT:   "8888"
-        ZUULSERVER_PORT:     "5555"
-        KAFKASERVER_PORT:    "2181"
-        REDIS_PORT:          "6379"
-        ZIPKIN_PORT:         "9411"
-        ENCRYPT_KEY:       "IMSYMMETRIC"
-  
+        
   authenticationservice:
-      image: kipc/sandbox-authentication-server:${BUILD_NAME}
+      image: kipc/auth-server-finchley:${BUILD_NAME}
       ports:
         - "8901:8901"
       environment:
@@ -67,57 +92,80 @@ services:
         EUREKASERVER_PORT: "8761"
         ENCRYPT_KEY:       "IMSYMMETRIC"
   
-  organizationservice:
-      image: kipc/sandbox-organization-service:${BUILD_NAME}
-      ports:
-        - "8085:8085"
-      environment:
-        PROFILE: "default"
-        SERVER_PORT: "8085"
-        CONFIGSERVER_URI: "http://configserver:8888"
-        EUREKASERVER_URI: "http://eurekaserver:8761/eureka/"
-        ZIPKIN_URI: "http://zipkin:9411"
-        KAFKASERVER_URI: "kafkaserver"
-        ZKSERVER_URI: "kafkaserver"
-        AUTHSERVER_URI:   "http://authenticationservice:8901/user"
-        DATABASESERVER_PORT: "5432"
-        EUREKASERVER_PORT:   "8761"
-        CONFIGSERVER_PORT:   "8888"
-        ZUULSERVER_PORT:     "5555"
-        KAFKASERVER_PORT:    "2181"
-        ZIPKIN_PORT:         "9411"
-        ENCRYPT_KEY:       "IMSYMMETRIC"
-        
-  zipkin:
-      image: kipc/sandbox-zipkin-server:${BUILD_NAME}
-      ports:
-        - "9411:9411"
-      environment:
-        SERVER_PORT: "9411"
-  
-  kafkaserver:
-      image: spotify/kafka
-      mem_limit: 1073741824
-      ports:
-        - 2181:2181
-        - 9092:9092
-        
-  redis:
-      image: redis:alpine
-      ports:
-        - 6379:6379
-        
-  logspout:
-      image: gliderlabs/logspout
-      command: syslog://logs2.papertrailapp.com:39865
-      volumes:
-        - /var/run/docker.sock:/var/run/docker.sock
-        
-  database:
-      image: postgres:9.5
-      ports:
-        - "5432:5432"
-      environment:
-        - POSTGRES_USER=postgres
-        - POSTGRES_PASSWORD=p0stgr@s
-        - POSTGRES_DB=eagle_eye_local
+#  licensingservice:
+#      image: kipc/sandbox-licensing-service:${BUILD_NAME}
+#      ports:
+#        - "8080:8080"
+#      environment:
+#        PROFILE: "default"
+#        SERVER_PORT: "8080"
+#        CONFIGSERVER_URI: "http://configserver:8888"
+#        EUREKASERVER_URI: "http://eurekaserver:8761/eureka/"
+#        ZIPKIN_URI: "http://zipkin:9411"
+#        KAFKASERVER_URI: "kafkaserver"
+#        ZKSERVER_URI: "kafkaserver"
+#        AUTHSERVER_URI:   "http://authenticationservice:8901/user"
+#        DATABASESERVER_PORT: "5432"
+#        EUREKASERVER_PORT:   "8761"
+#        CONFIGSERVER_PORT:   "8888"
+#        ZUULSERVER_PORT:     "5555"
+#        KAFKASERVER_PORT:    "2181"
+#        REDIS_PORT:          "6379"
+#        ZIPKIN_PORT:         "9411"
+#        ENCRYPT_KEY:       "IMSYMMETRIC"
+#  
+#  
+#  organizationservice:
+#      image: kipc/sandbox-organization-service:${BUILD_NAME}
+#      ports:
+#        - "8085:8085"
+#      environment:
+#        PROFILE: "default"
+#        SERVER_PORT: "8085"
+#        CONFIGSERVER_URI: "http://configserver:8888"
+#        EUREKASERVER_URI: "http://eurekaserver:8761/eureka/"
+#        ZIPKIN_URI: "http://zipkin:9411"
+#        KAFKASERVER_URI: "kafkaserver"
+#        ZKSERVER_URI: "kafkaserver"
+#        AUTHSERVER_URI:   "http://authenticationservice:8901/user"
+#        DATABASESERVER_PORT: "5432"
+#        EUREKASERVER_PORT:   "8761"
+#        CONFIGSERVER_PORT:   "8888"
+#        ZUULSERVER_PORT:     "5555"
+#        KAFKASERVER_PORT:    "2181"
+#        ZIPKIN_PORT:         "9411"
+#        ENCRYPT_KEY:       "IMSYMMETRIC"
+#        
+#  zipkin:
+#      image: kipc/sandbox-zipkin-server:${BUILD_NAME}
+#      ports:
+#        - "9411:9411"
+#      environment:
+#        SERVER_PORT: "9411"
+#  
+#  kafkaserver:
+#      image: spotify/kafka
+#      mem_limit: 1073741824
+#      ports:
+#        - 2181:2181
+#        - 9092:9092
+#        
+#  redis:
+#      image: redis:alpine
+#      ports:
+#        - 6379:6379
+#        
+#  logspout:
+#      image: gliderlabs/logspout
+#      command: syslog://logs2.papertrailapp.com:39865
+#      volumes:
+#        - /var/run/docker.sock:/var/run/docker.sock
+#        
+#  database:
+#      image: postgres:9.5
+#      ports:
+#        - "5432:5432"
+#      environment:
+#        - POSTGRES_USER=postgres
+#        - POSTGRES_PASSWORD=p0stgr@s
+#        - POSTGRES_DB=eagle_eye_local
