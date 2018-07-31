@@ -24,7 +24,7 @@ public class SpringBootAdminApplication {
 		SpringApplication.run(SpringBootAdminApplication.class, args);
 	}
 	
-	@Profile("insecure")
+	@Profile({"insecure", "default", "local"})
     @Configuration
     public static class SecurityPermitAllConfig extends WebSecurityConfigurerAdapter {
         @Override

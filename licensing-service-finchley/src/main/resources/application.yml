@@ -9,7 +9,7 @@ logging:
   file: target/licensing.log
   level: #Setting logging levels
     com.netflix: WARN
-    org.springframework.web: DEBUG
+    org.springframework.web: WARN
     es.in2.cloud: DEBUG
   
 eureka:

@@ -11,8 +11,8 @@ import org.springframework.web.client.RestTemplate;
 
 @Service
 public class DiscoveryService {
-    @Autowired
-    RestTemplate restTemplate;
+//    @Autowired
+//    RestTemplate restTemplate;
 
     @Autowired
     private DiscoveryClient discoveryClient;

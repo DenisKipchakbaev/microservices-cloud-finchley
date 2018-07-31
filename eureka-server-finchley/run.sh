@@ -1,5 +1,5 @@
 #!/bin/sh
-echo "********************************************************"
 echo "Starting the Eureka Server"
-echo "********************************************************"
-java -Djava.security.egd=file:/dev/./urandom -jar /usr/local/@project.name@/@project.build.finalName@.jar
+java -Djava.security.egd=file:/dev/./urandom			  \
+     -Dserver.port=$SERVER_PORT   				  \
+     -jar /usr/local/@project.name@/@project.build.finalName@.jar

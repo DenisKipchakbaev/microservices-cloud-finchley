@@ -1,4 +1,4 @@
-version: '2'
+version: '3'
 services:
 
   zookeeper:
@@ -40,9 +40,21 @@ services:
     image: adminer
     restart: always
     ports:
-      - 9095:8080
+      - 8988:8080
 
   zipkin:
     image: openzipkin/zipkin
     ports:
       - 9411:9411
+      
+  portainer:
+    image: portainer/portainer
+    ports:
+      - "9000:9000"
+    command: -H unix:///var/run/docker.sock
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock
+      - portainer_data:/data
+      
+volumes:
+  portainer_data:

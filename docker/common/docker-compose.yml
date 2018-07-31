@@ -1,4 +1,4 @@
-version: '2'
+version: '3'
 services:
 
   zookeeper:
@@ -11,30 +11,32 @@ services:
     ports:
       - "9092:9092" #TODO can't scale kafka instances with this setup https://github.com/wurstmeister/kafka-docker/issues/211
     environment:
-      KAFKA_ADVERTISED_HOST_NAME: localhost
+      KAFKA_ADVERTISED_HOST_NAME: kafka
       KAFKA_ZOOKEEPER_CONNECT: zookeeper:2181
     volumes:
       - /var/run/docker.sock:/var/run/docker.sock
+    depends_on:
+      - zookeeper
   
   redis:
-      image: redis:alpine
-      ports:
-        - 6379:6379
+    image: redis:alpine
+    ports:
+      - 6379:6379
         
   logspout:
-      image: gliderlabs/logspout
-      command: syslog://logs2.papertrailapp.com:39865
-      volumes:
-        - /var/run/docker.sock:/var/run/docker.sock
+    image: gliderlabs/logspout
+    command: syslog://logs2.papertrailapp.com:39865
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock
         
   database:
-      image: postgres:11
-      ports:
-        - "5432:5432"
-      environment:
-        POSTGRES_USER: postgres
-        POSTGRES_PASSWORD: p0stgr@s
-        POSTGRES_DB: eagle_eye_local
+    image: postgres:11
+    ports:
+      - "5432:5432"
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: p0stgr@s #TODO encrypt as docker secret
+      POSTGRES_DB: eagle_eye_local
  
   adminer:
     image: adminer
@@ -46,6 +48,15 @@ services:
     image: openzipkin/zipkin
     ports:
       - 9411:9411
+      
+  portainer:
+    image: portainer/portainer
+    ports:
+      - "9000:9000"
+    command: -H unix:///var/run/docker.sock
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock
+      - portainer_data:/data
   
   eurekaserver:
      image: kipc/eureka-server-finchley:${BUILD_NAME}
@@ -53,119 +64,146 @@ services:
          - "8761:8761"
          
   configserver:
-      image: kipc/config-server-finchley:${BUILD_NAME}
-      ports:
-         - "8888:8888"
-      environment:
-         EUREKASERVER_URI: "http://eurekaserver:8761/eureka/"
-         EUREKASERVER_PORT: "8761"
-         ENCRYPT_KEY:       "IMSYMMETRIC"
+    image: kipc/config-server-finchley:${BUILD_NAME}
+    ports:
+       - "8888:8888"
+    environment:
+       EUREKASERVER_URI: "http://eurekaserver:8761/eureka/"
+       EUREKASERVER_PORT: "8761"
+       ENCRYPT_KEY:       "IMSYMMETRIC"
   
   zuulserver:
-      image: kipc/zuul-gateway-finchley:${BUILD_NAME}
-      ports:
-        - "5555:5555"
-      environment:
-        PROFILE: "default"
-        SERVER_PORT: "5555"
-        CONFIGSERVER_URI: "http://configserver:8888"
-        EUREKASERVER_URI: "http://eurekaserver:8761/eureka/"
-        ZIPKIN_URI: "http://zipkin:9411"
-        DATABASESERVER_PORT: "5432"
-        EUREKASERVER_PORT:   "8761"
-        CONFIGSERVER_PORT:   "8888"
-        ZIPKIN_PORT:         "9411"
+    image: kipc/zuul-gateway-finchley:${BUILD_NAME}
+    ports:
+      - "5555:5555"
+    environment:
+      PROFILE: "default"
+      SERVER_PORT: "5555"
+      CONFIGSERVER_URI: "http://configserver:8888"
+      EUREKASERVER_URI: "http://eurekaserver:8761/eureka/"
+      ZIPKIN_URI: "http://zipkin:9411"
+      DATABASESERVER_PORT: "5432"
+      EUREKASERVER_PORT:   "8761"
+      CONFIGSERVER_PORT:   "8888"
+      ZIPKIN_PORT:         "9411"
+    depends_on:
+      - configserver
         
   authenticationservice:
-      image: kipc/auth-server-finchley:${BUILD_NAME}
-      ports:
-        - "8901:8901"
-      environment:
-        PROFILE: "default"
-        SERVER_PORT: "8901"
-        CONFIGSERVER_URI: "http://configserver:8888"
-        EUREKASERVER_URI: "http://eurekaserver:8761/eureka/"
-        ZIPKIN_URI: "http://zipkin:9411"
-        ZIPKIN_PORT:       "9411"
-        DATABASE_PORT:     "5432"
-        CONFIGSERVER_PORT: "8888"
-        EUREKASERVER_PORT: "8761"
-        ENCRYPT_KEY:       "IMSYMMETRIC"
+    image: kipc/auth-server-finchley:${BUILD_NAME}
+    ports:
+      - "8901:8901"
+    environment:
+      PROFILE: "default"
+      SERVER_PORT: "8901"
+      CONFIGSERVER_URI: "http://configserver:8888"
+      EUREKASERVER_URI: "http://eurekaserver:8761/eureka/"
+      ZIPKIN_URI: "http://zipkin:9411"
+      ZIPKIN_PORT:       "9411"
+      DATABASE_PORT:     "5432"
+      CONFIGSERVER_PORT: "8888"
+      EUREKASERVER_PORT: "8761"
+      ENCRYPT_KEY:       "IMSYMMETRIC"
+    depends_on:
+      - database
+      - configserver
   
-#  licensingservice:
-#      image: kipc/sandbox-licensing-service:${BUILD_NAME}
-#      ports:
-#        - "8080:8080"
-#      environment:
-#        PROFILE: "default"
-#        SERVER_PORT: "8080"
-#        CONFIGSERVER_URI: "http://configserver:8888"
-#        EUREKASERVER_URI: "http://eurekaserver:8761/eureka/"
-#        ZIPKIN_URI: "http://zipkin:9411"
-#        KAFKASERVER_URI: "kafkaserver"
-#        ZKSERVER_URI: "kafkaserver"
-#        AUTHSERVER_URI:   "http://authenticationservice:8901/user"
-#        DATABASESERVER_PORT: "5432"
-#        EUREKASERVER_PORT:   "8761"
-#        CONFIGSERVER_PORT:   "8888"
-#        ZUULSERVER_PORT:     "5555"
-#        KAFKASERVER_PORT:    "2181"
-#        REDIS_PORT:          "6379"
-#        ZIPKIN_PORT:         "9411"
-#        ENCRYPT_KEY:       "IMSYMMETRIC"
-#  
-#  
-#  organizationservice:
-#      image: kipc/sandbox-organization-service:${BUILD_NAME}
-#      ports:
-#        - "8085:8085"
-#      environment:
-#        PROFILE: "default"
-#        SERVER_PORT: "8085"
-#        CONFIGSERVER_URI: "http://configserver:8888"
-#        EUREKASERVER_URI: "http://eurekaserver:8761/eureka/"
-#        ZIPKIN_URI: "http://zipkin:9411"
-#        KAFKASERVER_URI: "kafkaserver"
-#        ZKSERVER_URI: "kafkaserver"
-#        AUTHSERVER_URI:   "http://authenticationservice:8901/user"
-#        DATABASESERVER_PORT: "5432"
-#        EUREKASERVER_PORT:   "8761"
-#        CONFIGSERVER_PORT:   "8888"
-#        ZUULSERVER_PORT:     "5555"
-#        KAFKASERVER_PORT:    "2181"
-#        ZIPKIN_PORT:         "9411"
-#        ENCRYPT_KEY:       "IMSYMMETRIC"
-#        
-#  zipkin:
-#      image: kipc/sandbox-zipkin-server:${BUILD_NAME}
-#      ports:
-#        - "9411:9411"
-#      environment:
-#        SERVER_PORT: "9411"
-#  
-#  kafkaserver:
-#      image: spotify/kafka
-#      mem_limit: 1073741824
-#      ports:
-#        - 2181:2181
-#        - 9092:9092
-#        
-#  redis:
-#      image: redis:alpine
-#      ports:
-#        - 6379:6379
-#        
-#  logspout:
-#      image: gliderlabs/logspout
-#      command: syslog://logs2.papertrailapp.com:39865
-#      volumes:
-#        - /var/run/docker.sock:/var/run/docker.sock
-#        
-#  database:
-#      image: postgres:9.5
-#      ports:
-#        - "5432:5432"
-#      environment:
-#        - POSTGRES_USER=postgres
-#        - POSTGRES_PASSWORD=p0stgr@s
-#        - POSTGRES_DB=eagle_eye_local
+  licensingservice:
+    image: kipc/licensing-service-finchley:${BUILD_NAME}
+    ports:
+      - "8084:8084"
+    environment:
+      PROFILE: "default"
+      SERVER_PORT: "8084"
+      CONFIGSERVER_URI: "http://configserver:8888"
+      EUREKASERVER_URI: "http://eurekaserver:8761/eureka/"
+      ZIPKIN_URI: "http://zipkin:9411"
+      KAFKASERVER_URI: "kafka"
+      AUTHSERVER_URI:   "http://authenticationservice:8901/user"
+      DATABASESERVER_PORT: "5432"
+      EUREKASERVER_PORT:   "8761"
+      CONFIGSERVER_PORT:   "8888"
+      ZUULSERVER_PORT:     "5555"
+      KAFKASERVER_PORT:    "9092"
+      REDIS_PORT:          "6379"
+      ZIPKIN_PORT:         "9411"
+      ENCRYPT_KEY:       "IMSYMMETRIC"
+    depends_on:
+      - database
+      - redis
+      - kafka
+      - zookeeper
+      - configserver
+  
+  organizationservice:
+    image: kipc/organization-service-finchley:${BUILD_NAME}
+    ports:
+      - "8085:8085"
+    environment:
+      PROFILE: "default"
+      SERVER_PORT: "8085"
+      CONFIGSERVER_URI: "http://configserver:8888"
+      EUREKASERVER_URI: "http://eurekaserver:8761/eureka/"
+      ZIPKIN_URI: "http://zipkin:9411"
+      KAFKASERVER_URI: "kafka"
+      AUTHSERVER_URI:   "http://authenticationservice:8901/user"
+      DATABASESERVER_PORT: "5432"
+      EUREKASERVER_PORT:   "8761"
+      CONFIGSERVER_PORT:   "8888"
+      ZUULSERVER_PORT:     "5555"
+      KAFKASERVER_PORT:    "9092"
+      ZIPKIN_PORT:         "9411"
+      ENCRYPT_KEY:       "IMSYMMETRIC"
+    depends_on:
+      - database
+      - kafka
+      - zookeeper
+      - configserver
+
+  turbinestream:
+    image: kipc/turbine-stream:${BUILD_NAME}
+    ports:
+      - "8989:8989"
+    environment:
+      PROFILE: "default"
+      SERVER_PORT: "8989"
+      CONFIGSERVER_URI: "http://configserver:8888"
+      EUREKASERVER_URI: "http://eurekaserver:8761/eureka/"
+      KAFKASERVER_URI:  "kafka"
+      EUREKASERVER_PORT:   "8761"
+      CONFIGSERVER_PORT:   "8888"
+      KAFKASERVER_PORT:    "9092"
+    depends_on:
+      - configserver
+      - eurekaserver
+      - kafka
+    
+  hystrixdashboard:
+    image: kipc/hystrix-dashboard:${BUILD_NAME}
+    ports:
+      - "7979:7979"
+    environment:
+      PROFILE: "default"
+      SERVER_PORT: "7979"
+      CONFIGSERVER_URI: "http://configserver:8888"
+      EUREKASERVER_URI: "http://eurekaserver:8761/eureka/"
+      EUREKASERVER_PORT:   "8761"
+      CONFIGSERVER_PORT:   "8888"
+    depends_on:
+      - configserver
+      - eurekaserver
+      
+  springbootadmin:
+    image: kipc/spring-boot-admin:${BUILD_NAME}
+    ports:
+      - "8090:8090"
+    environment:
+      PROFILE: "default"
+      SERVER_PORT: "8090"
+      EUREKASERVER_URI: "http://eurekaserver:8761/eureka/"
+      EUREKASERVER_PORT:   "8761"
+    depends_on:
+      - eurekaserver
+      
+volumes:
+  portainer_data:
