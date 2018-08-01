@@ -1,0 +1,1566 @@
+{
+	"info": {
+		"_postman_id": "f020ec96-101f-47eb-97ec-14f30c74110e",
+		"name": "licensing-service Finchley",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"_postman_id": "4e971231-1b91-42b7-b99b-3b95866fb66b",
+			"name": "Actuator",
+			"item": [
+				{
+					"_postman_id": "dee14936-3d20-4dda-a325-c42a498b721f",
+					"name": "actuator",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{access_token}}"
+							}
+						],
+						"body": {},
+						"url": {
+							"raw": "http://localhost:5555/api/licensingservice/actuator",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5555",
+							"path": [
+								"api",
+								"licensingservice",
+								"actuator"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"_postman_id": "efcbc940-6795-442a-81e9-fb0a85a4a44f",
+					"name": "actuator mappings",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{access_token}}"
+							}
+						],
+						"body": {},
+						"url": {
+							"raw": "http://localhost:5555/api/licensingservice/actuator/mappings",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5555",
+							"path": [
+								"api",
+								"licensingservice",
+								"actuator",
+								"mappings"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"_postman_id": "c6f3a024-67cf-4d65-a882-ed245757cd3f",
+					"name": "actuator configprops (shows all autoconfigured props)",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{access_token}}"
+							}
+						],
+						"body": {},
+						"url": {
+							"raw": "http://localhost:5555/api/licensingservice/actuator/configprops",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5555",
+							"path": [
+								"api",
+								"licensingservice",
+								"actuator",
+								"configprops"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"_postman_id": "59eee2e5-c786-4211-8ae1-412b6ad37f77",
+					"name": "actuator beans (loaded Spring beans)",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{access_token}}"
+							}
+						],
+						"body": {},
+						"url": {
+							"raw": "http://localhost:5555/api/licensingservice/actuator/beans",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5555",
+							"path": [
+								"api",
+								"licensingservice",
+								"actuator",
+								"beans"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"_postman_id": "a6c5bb4a-1c1b-4745-906c-055bd9b08080",
+					"name": "actuator logfile",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{access_token}}"
+							}
+						],
+						"body": {},
+						"url": {
+							"raw": "http://localhost:5555/api/licensingservice/actuator/logfile",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5555",
+							"path": [
+								"api",
+								"licensingservice",
+								"actuator",
+								"logfile"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"_postman_id": "7d645827-53e2-4f6a-8bfc-286575d0a953",
+					"name": "actuator loggers (Log levels)",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{access_token}}"
+							}
+						],
+						"body": {},
+						"url": {
+							"raw": "http://localhost:5555/api/licensingservice/actuator/loggers/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5555",
+							"path": [
+								"api",
+								"licensingservice",
+								"actuator",
+								"loggers",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"_postman_id": "8ea0d55d-6e03-4781-8e02-0048c165551e",
+					"name": "actuator loggers - org.springframework.boot",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{access_token}}"
+							}
+						],
+						"body": {},
+						"url": {
+							"raw": "http://localhost:5555/api/licensingservice/actuator/loggers/org.springframework.boot",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5555",
+							"path": [
+								"api",
+								"licensingservice",
+								"actuator",
+								"loggers",
+								"org.springframework.boot"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"_postman_id": "79a1e646-825e-4333-81d4-773a66c02c72",
+					"name": "actuator heath",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{access_token}}"
+							}
+						],
+						"body": {},
+						"url": {
+							"raw": "http://localhost:5555/api/licensingservice/actuator/health",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5555",
+							"path": [
+								"api",
+								"licensingservice",
+								"actuator",
+								"health"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"_postman_id": "04556b87-2234-4fd0-b1ec-7a8ae7f9b632",
+					"name": "actuator env",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{access_token}}"
+							}
+						],
+						"body": {},
+						"url": {
+							"raw": "http://localhost:5555/api/licensingservice/actuator/env",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5555",
+							"path": [
+								"api",
+								"licensingservice",
+								"actuator",
+								"env"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"_postman_id": "3695b9ad-dbf1-46ce-8c9c-0ba5d8db63d5",
+					"name": "actuator archaius",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{access_token}}"
+							}
+						],
+						"body": {},
+						"url": {
+							"raw": "http://localhost:5555/api/licensingservice/actuator/archaius",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5555",
+							"path": [
+								"api",
+								"licensingservice",
+								"actuator",
+								"archaius"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"_postman_id": "5c2e3120-50bf-41af-999c-0a537fd1b625",
+					"name": "actuator auditevents",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{access_token}}"
+							}
+						],
+						"body": {},
+						"url": {
+							"raw": "http://localhost:5555/api/licensingservice/actuator/auditevents",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5555",
+							"path": [
+								"api",
+								"licensingservice",
+								"actuator",
+								"auditevents"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"_postman_id": "8e2bf8af-e572-4434-a53d-d2aeb1c62c02",
+					"name": "actuator conditions",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{access_token}}"
+							}
+						],
+						"body": {},
+						"url": {
+							"raw": "http://localhost:5555/api/licensingservice/actuator/conditions",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5555",
+							"path": [
+								"api",
+								"licensingservice",
+								"actuator",
+								"conditions"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"_postman_id": "98e33136-b4c7-4247-a916-5666bd756ed9",
+					"name": "actuator heapdump (postman crushes)",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{access_token}}"
+							}
+						],
+						"body": {},
+						"url": {
+							"raw": "http://localhost:5555/api/licensingservice/actuator/heapdump",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5555",
+							"path": [
+								"api",
+								"licensingservice",
+								"actuator",
+								"heapdump"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"_postman_id": "486a5a49-48f9-4d6a-a2d1-73c115cf0816",
+					"name": "actuator info",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{access_token}}"
+							}
+						],
+						"body": {},
+						"url": {
+							"raw": "http://localhost:5555/api/licensingservice/actuator/info",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5555",
+							"path": [
+								"api",
+								"licensingservice",
+								"actuator",
+								"info"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"_postman_id": "a3bb9f74-61d8-41cb-aaab-5e9de57f2f1b",
+					"name": "actuator threaddump",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{access_token}}"
+							}
+						],
+						"body": {},
+						"url": {
+							"raw": "http://localhost:5555/api/licensingservice/actuator/threaddump",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5555",
+							"path": [
+								"api",
+								"licensingservice",
+								"actuator",
+								"threaddump"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"_postman_id": "b505925a-fdc7-42e6-b30c-ac6bed21708a",
+					"name": "actuator metrics (list)",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{access_token}}"
+							}
+						],
+						"body": {},
+						"url": {
+							"raw": "http://localhost:5555/api/licensingservice/actuator/metrics",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5555",
+							"path": [
+								"api",
+								"licensingservice",
+								"actuator",
+								"metrics"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"_postman_id": "fd2026e2-814f-409c-a180-3db48e258c00",
+					"name": "actuator metrics - uptime",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{access_token}}"
+							}
+						],
+						"body": {},
+						"url": {
+							"raw": "http://localhost:5555/api/licensingservice/actuator/metrics/process.uptime",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5555",
+							"path": [
+								"api",
+								"licensingservice",
+								"actuator",
+								"metrics",
+								"process.uptime"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"_postman_id": "6aa40eb9-9c81-4623-aa47-be7f1498b109",
+					"name": "actuator scheduledtasks",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{access_token}}"
+							}
+						],
+						"body": {},
+						"url": {
+							"raw": "http://localhost:5555/api/licensingservice/actuator/scheduledtasks",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5555",
+							"path": [
+								"api",
+								"licensingservice",
+								"actuator",
+								"scheduledtasks"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"_postman_id": "e4f0e92a-4e83-42b9-b6e0-166a9ce9f8bb",
+					"name": "actuator httptrace (call history)",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{access_token}}"
+							}
+						],
+						"body": {},
+						"url": {
+							"raw": "http://localhost:5555/api/licensingservice/actuator/httptrace",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5555",
+							"path": [
+								"api",
+								"licensingservice",
+								"actuator",
+								"httptrace"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"_postman_id": "f9fce1f2-1c98-4430-ad0a-f4f3cf5b855f",
+					"name": "actuator refresh",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{access_token}}"
+							}
+						],
+						"body": {},
+						"url": {
+							"raw": "http://localhost:5555/api/licensingservice/actuator/refresh",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5555",
+							"path": [
+								"api",
+								"licensingservice",
+								"actuator",
+								"refresh"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"_postman_id": "0068b675-b14d-49b9-8f2d-47ece1c8ebcf",
+					"name": "actuator features",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{access_token}}"
+							}
+						],
+						"body": {},
+						"url": {
+							"raw": "http://localhost:5555/api/licensingservice/actuator/features",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5555",
+							"path": [
+								"api",
+								"licensingservice",
+								"actuator",
+								"features"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"_postman_id": "b3c31442-b892-48d6-8bf1-cd363f6dda1e",
+					"name": "actuator service-registry",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{access_token}}"
+							}
+						],
+						"body": {},
+						"url": {
+							"raw": "http://localhost:5555/api/licensingservice/actuator/service-registry",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5555",
+							"path": [
+								"api",
+								"licensingservice",
+								"actuator",
+								"service-registry"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"_postman_id": "74f3cb51-3d00-450a-9b4c-8d07ab09753c",
+					"name": "actuator bindings (stream)",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{access_token}}"
+							}
+						],
+						"body": {},
+						"url": {
+							"raw": "http://localhost:5555/api/licensingservice/actuator/bindings",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5555",
+							"path": [
+								"api",
+								"licensingservice",
+								"actuator",
+								"bindings"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"_postman_id": "a53045ca-d8d0-4fb8-9a3e-e8eb5c0e6dbc",
+					"name": "actuator channels (stream)",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{access_token}}"
+							}
+						],
+						"body": {},
+						"url": {
+							"raw": "http://localhost:5555/api/licensingservice/actuator/channels",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5555",
+							"path": [
+								"api",
+								"licensingservice",
+								"actuator",
+								"channels"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"_postman_id": "1284667b-6596-45a8-9efa-3b5397664860",
+			"name": "GET license 1 through Gateway - Rest template - eureka routes",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer {{access_token}}"
+					}
+				],
+				"body": {},
+				"url": {
+					"raw": "http://localhost:5555/api/licensingservice/v1/organizations/e254f8c-c442-4ebe-a82a-e2fc1d1ff78a/licenses/f3831f8c-c338-4ebe-a82a-e2fc1d1ff78a",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5555",
+					"path": [
+						"api",
+						"licensingservice",
+						"v1",
+						"organizations",
+						"e254f8c-c442-4ebe-a82a-e2fc1d1ff78a",
+						"licenses",
+						"f3831f8c-c338-4ebe-a82a-e2fc1d1ff78a"
+					]
+				}
+			},
+			"response": [
+				{
+					"id": "fb224cc4-d8af-43fd-ac68-c8520fa1de81",
+					"name": "GET license 1",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"body": {},
+						"url": {
+							"raw": "http://localhost:8080/v1/organizations/1/licenses/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"v1",
+								"organizations",
+								"1",
+								"licenses",
+								"1"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json;charset=UTF-8",
+							"name": "Content-Type",
+							"description": "The mime type of this content"
+						},
+						{
+							"key": "Date",
+							"value": "Thu, 07 Jun 2018 09:58:59 GMT",
+							"name": "Date",
+							"description": "The date and time that the message was sent"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked",
+							"name": "Transfer-Encoding",
+							"description": "The form of encoding used to safely transfer the entity to the user. Currently defined methods are: chunked, compress, deflate, gzip, identity."
+						},
+						{
+							"key": "X-Application-Context",
+							"value": "application",
+							"name": "X-Application-Context",
+							"description": "Custom header"
+						}
+					],
+					"cookie": [],
+					"body": "{\"id\":\"1\",\"organizationId\":\"1\",\"productName\":\"Teleco\",\"licenseType\":\"Seat\"}"
+				},
+				{
+					"id": "ce8ab75e-34a6-4daf-a9ca-2394d4ccb082",
+					"name": "GET license f3831f8c-c338-4ebe-a82a-e2fc1d1ff78a",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"body": {},
+						"url": {
+							"raw": "http://0.0.0.0:{{portLicSrv}}/v1/organizations/e254f8c-c442-4ebe-a82a-e2fc1d1ff78a/licenses/f3831f8c-c338-4ebe-a82a-e2fc1d1ff78a",
+							"protocol": "http",
+							"host": [
+								"0",
+								"0",
+								"0",
+								"0"
+							],
+							"port": "{{portLicSrv}}",
+							"path": [
+								"v1",
+								"organizations",
+								"e254f8c-c442-4ebe-a82a-e2fc1d1ff78a",
+								"licenses",
+								"f3831f8c-c338-4ebe-a82a-e2fc1d1ff78a"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json;charset=UTF-8",
+							"name": "Content-Type",
+							"description": "The mime type of this content"
+						},
+						{
+							"key": "Date",
+							"value": "Thu, 07 Jun 2018 14:49:12 GMT",
+							"name": "Date",
+							"description": "The date and time that the message was sent"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked",
+							"name": "Transfer-Encoding",
+							"description": "The form of encoding used to safely transfer the entity to the user. Currently defined methods are: chunked, compress, deflate, gzip, identity."
+						},
+						{
+							"key": "X-Application-Context",
+							"value": "licensingservice:default",
+							"name": "X-Application-Context",
+							"description": "Custom header"
+						}
+					],
+					"cookie": [],
+					"body": "{\"licenseId\":\"f3831f8c-c338-4ebe-a82a-e2fc1d1ff78a\",\"organizationId\":\"e254f8c-c442-4ebe-a82a-e2fc1d1ff78a\",\"productName\":\"customer-crm-co\",\"licenseType\":\"user\",\"licenseMax\":100,\"licenseAllocated\":5,\"comment\":\"I AM IN THE DEFAULT\"}"
+				}
+			]
+		},
+		{
+			"_postman_id": "9a2074a5-8ec9-44fc-bec7-33e839c353bf",
+			"name": "GET license 2 through Gateway - Rest Template - eureka routes",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer {{access_token}}"
+					}
+				],
+				"body": {},
+				"url": {
+					"raw": "http://localhost:5555/api/licensingservice/v1/organizations/e254f8c-c442-4ebe-a82a-e2fc1d1ff78a/licenses/t9876f8c-c338-4abc-zf6a-ttt1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5555",
+					"path": [
+						"api",
+						"licensingservice",
+						"v1",
+						"organizations",
+						"e254f8c-c442-4ebe-a82a-e2fc1d1ff78a",
+						"licenses",
+						"t9876f8c-c338-4abc-zf6a-ttt1"
+					]
+				}
+			},
+			"response": [
+				{
+					"id": "e0c63f91-e051-4bd2-91d5-4b1c3ecaac89",
+					"name": "GET license f3831f8c-c338-4ebe-a82a-e2fc1d1ff78a",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"body": {},
+						"url": {
+							"raw": "http://0.0.0.0:{{portLicSrv}}/v1/organizations/e254f8c-c442-4ebe-a82a-e2fc1d1ff78a/licenses/f3831f8c-c338-4ebe-a82a-e2fc1d1ff78a",
+							"protocol": "http",
+							"host": [
+								"0",
+								"0",
+								"0",
+								"0"
+							],
+							"port": "{{portLicSrv}}",
+							"path": [
+								"v1",
+								"organizations",
+								"e254f8c-c442-4ebe-a82a-e2fc1d1ff78a",
+								"licenses",
+								"f3831f8c-c338-4ebe-a82a-e2fc1d1ff78a"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json;charset=UTF-8",
+							"name": "Content-Type",
+							"description": "The mime type of this content"
+						},
+						{
+							"key": "Date",
+							"value": "Thu, 07 Jun 2018 14:49:12 GMT",
+							"name": "Date",
+							"description": "The date and time that the message was sent"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked",
+							"name": "Transfer-Encoding",
+							"description": "The form of encoding used to safely transfer the entity to the user. Currently defined methods are: chunked, compress, deflate, gzip, identity."
+						},
+						{
+							"key": "X-Application-Context",
+							"value": "licensingservice:default",
+							"name": "X-Application-Context",
+							"description": "Custom header"
+						}
+					],
+					"cookie": [],
+					"body": "{\"licenseId\":\"f3831f8c-c338-4ebe-a82a-e2fc1d1ff78a\",\"organizationId\":\"e254f8c-c442-4ebe-a82a-e2fc1d1ff78a\",\"productName\":\"customer-crm-co\",\"licenseType\":\"user\",\"licenseMax\":100,\"licenseAllocated\":5,\"comment\":\"I AM IN THE DEFAULT\"}"
+				},
+				{
+					"id": "79affb80-1e49-4e22-8051-2c5bfd867aa1",
+					"name": "GET license 1",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"body": {},
+						"url": {
+							"raw": "http://localhost:8080/v1/organizations/1/licenses/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"v1",
+								"organizations",
+								"1",
+								"licenses",
+								"1"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json;charset=UTF-8",
+							"name": "Content-Type",
+							"description": "The mime type of this content"
+						},
+						{
+							"key": "Date",
+							"value": "Thu, 07 Jun 2018 09:58:59 GMT",
+							"name": "Date",
+							"description": "The date and time that the message was sent"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked",
+							"name": "Transfer-Encoding",
+							"description": "The form of encoding used to safely transfer the entity to the user. Currently defined methods are: chunked, compress, deflate, gzip, identity."
+						},
+						{
+							"key": "X-Application-Context",
+							"value": "application",
+							"name": "X-Application-Context",
+							"description": "Custom header"
+						}
+					],
+					"cookie": [],
+					"body": "{\"id\":\"1\",\"organizationId\":\"1\",\"productName\":\"Teleco\",\"licenseType\":\"Seat\"}"
+				}
+			]
+		},
+		{
+			"_postman_id": "a3b068f8-1c76-4b53-a34c-6b6273758fea",
+			"name": "Refresh config (actuator)",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer {{access_token}}"
+					}
+				],
+				"body": {},
+				"url": {
+					"raw": "http://localhost:5555/api/licensingservice/actuator/refresh",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5555",
+					"path": [
+						"api",
+						"licensingservice",
+						"actuator",
+						"refresh"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"_postman_id": "d4805b33-2165-44c7-8232-b12279ab6fe6",
+			"name": "GET licenses by Org w Gateway (with timeout test)",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer {{access_token}}"
+					}
+				],
+				"body": {},
+				"url": {
+					"raw": "http://localhost:5555/api/licensingservice/v1/organizations/e254f8c-c442-4ebe-a82a-e2fc1d1ff78a/licenses/",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5555",
+					"path": [
+						"api",
+						"licensingservice",
+						"v1",
+						"organizations",
+						"e254f8c-c442-4ebe-a82a-e2fc1d1ff78a",
+						"licenses",
+						""
+					]
+				}
+			},
+			"response": [
+				{
+					"id": "bec10a7b-ee60-416f-80c6-2b69489191f6",
+					"name": "GET license 1",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"body": {},
+						"url": {
+							"raw": "http://localhost:8080/v1/organizations/1/licenses/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"v1",
+								"organizations",
+								"1",
+								"licenses",
+								"1"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json;charset=UTF-8",
+							"name": "Content-Type",
+							"description": "The mime type of this content"
+						},
+						{
+							"key": "Date",
+							"value": "Thu, 07 Jun 2018 09:58:59 GMT",
+							"name": "Date",
+							"description": "The date and time that the message was sent"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked",
+							"name": "Transfer-Encoding",
+							"description": "The form of encoding used to safely transfer the entity to the user. Currently defined methods are: chunked, compress, deflate, gzip, identity."
+						},
+						{
+							"key": "X-Application-Context",
+							"value": "application",
+							"name": "X-Application-Context",
+							"description": "Custom header"
+						}
+					],
+					"cookie": [],
+					"body": "{\"id\":\"1\",\"organizationId\":\"1\",\"productName\":\"Teleco\",\"licenseType\":\"Seat\"}"
+				},
+				{
+					"id": "85e39b39-79a5-4c40-9122-a26f41aa6458",
+					"name": "GET license f3831f8c-c338-4ebe-a82a-e2fc1d1ff78a",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"body": {},
+						"url": {
+							"raw": "http://0.0.0.0:{{portLicSrv}}/v1/organizations/e254f8c-c442-4ebe-a82a-e2fc1d1ff78a/licenses/f3831f8c-c338-4ebe-a82a-e2fc1d1ff78a",
+							"protocol": "http",
+							"host": [
+								"0",
+								"0",
+								"0",
+								"0"
+							],
+							"port": "{{portLicSrv}}",
+							"path": [
+								"v1",
+								"organizations",
+								"e254f8c-c442-4ebe-a82a-e2fc1d1ff78a",
+								"licenses",
+								"f3831f8c-c338-4ebe-a82a-e2fc1d1ff78a"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json;charset=UTF-8",
+							"name": "Content-Type",
+							"description": "The mime type of this content"
+						},
+						{
+							"key": "Date",
+							"value": "Thu, 07 Jun 2018 14:49:12 GMT",
+							"name": "Date",
+							"description": "The date and time that the message was sent"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked",
+							"name": "Transfer-Encoding",
+							"description": "The form of encoding used to safely transfer the entity to the user. Currently defined methods are: chunked, compress, deflate, gzip, identity."
+						},
+						{
+							"key": "X-Application-Context",
+							"value": "licensingservice:default",
+							"name": "X-Application-Context",
+							"description": "Custom header"
+						}
+					],
+					"cookie": [],
+					"body": "{\"licenseId\":\"f3831f8c-c338-4ebe-a82a-e2fc1d1ff78a\",\"organizationId\":\"e254f8c-c442-4ebe-a82a-e2fc1d1ff78a\",\"productName\":\"customer-crm-co\",\"licenseType\":\"user\",\"licenseMax\":100,\"licenseAllocated\":5,\"comment\":\"I AM IN THE DEFAULT\"}"
+				}
+			]
+		},
+		{
+			"_postman_id": "aca4d9c2-5695-4888-837e-f3fb4832c383",
+			"name": "GET licenses with client type Discovery",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer {{access_token}}"
+					}
+				],
+				"body": {},
+				"url": {
+					"raw": "http://0.0.0.0:5555/api/licensingservice/v1/organizations/e254f8c-c442-4ebe-a82a-e2fc1d1ff78a/licenses/f3831f8c-c338-4ebe-a82a-e2fc1d1ff78a/discovery",
+					"protocol": "http",
+					"host": [
+						"0",
+						"0",
+						"0",
+						"0"
+					],
+					"port": "5555",
+					"path": [
+						"api",
+						"licensingservice",
+						"v1",
+						"organizations",
+						"e254f8c-c442-4ebe-a82a-e2fc1d1ff78a",
+						"licenses",
+						"f3831f8c-c338-4ebe-a82a-e2fc1d1ff78a",
+						"discovery"
+					]
+				}
+			},
+			"response": [
+				{
+					"id": "f59668e3-7d92-4799-afc9-b02da9dfea26",
+					"name": "GET license f3831f8c-c338-4ebe-a82a-e2fc1d1ff78a",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"body": {},
+						"url": {
+							"raw": "http://0.0.0.0:{{portLicSrv}}/v1/organizations/e254f8c-c442-4ebe-a82a-e2fc1d1ff78a/licenses/f3831f8c-c338-4ebe-a82a-e2fc1d1ff78a",
+							"protocol": "http",
+							"host": [
+								"0",
+								"0",
+								"0",
+								"0"
+							],
+							"port": "{{portLicSrv}}",
+							"path": [
+								"v1",
+								"organizations",
+								"e254f8c-c442-4ebe-a82a-e2fc1d1ff78a",
+								"licenses",
+								"f3831f8c-c338-4ebe-a82a-e2fc1d1ff78a"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json;charset=UTF-8",
+							"name": "Content-Type",
+							"description": "The mime type of this content"
+						},
+						{
+							"key": "Date",
+							"value": "Thu, 07 Jun 2018 14:49:12 GMT",
+							"name": "Date",
+							"description": "The date and time that the message was sent"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked",
+							"name": "Transfer-Encoding",
+							"description": "The form of encoding used to safely transfer the entity to the user. Currently defined methods are: chunked, compress, deflate, gzip, identity."
+						},
+						{
+							"key": "X-Application-Context",
+							"value": "licensingservice:default",
+							"name": "X-Application-Context",
+							"description": "Custom header"
+						}
+					],
+					"cookie": [],
+					"body": "{\"licenseId\":\"f3831f8c-c338-4ebe-a82a-e2fc1d1ff78a\",\"organizationId\":\"e254f8c-c442-4ebe-a82a-e2fc1d1ff78a\",\"productName\":\"customer-crm-co\",\"licenseType\":\"user\",\"licenseMax\":100,\"licenseAllocated\":5,\"comment\":\"I AM IN THE DEFAULT\"}"
+				},
+				{
+					"id": "60a1cb41-5e7b-41b2-97ab-b8a80a60c10d",
+					"name": "GET license 1",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"body": {},
+						"url": {
+							"raw": "http://localhost:8080/v1/organizations/1/licenses/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"v1",
+								"organizations",
+								"1",
+								"licenses",
+								"1"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json;charset=UTF-8",
+							"name": "Content-Type",
+							"description": "The mime type of this content"
+						},
+						{
+							"key": "Date",
+							"value": "Thu, 07 Jun 2018 09:58:59 GMT",
+							"name": "Date",
+							"description": "The date and time that the message was sent"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked",
+							"name": "Transfer-Encoding",
+							"description": "The form of encoding used to safely transfer the entity to the user. Currently defined methods are: chunked, compress, deflate, gzip, identity."
+						},
+						{
+							"key": "X-Application-Context",
+							"value": "application",
+							"name": "X-Application-Context",
+							"description": "Custom header"
+						}
+					],
+					"cookie": [],
+					"body": "{\"id\":\"1\",\"organizationId\":\"1\",\"productName\":\"Teleco\",\"licenseType\":\"Seat\"}"
+				}
+			]
+		},
+		{
+			"_postman_id": "bda3006e-581f-4c46-9065-c1415fb425e8",
+			"name": "GET licenses with client type Feign",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer {{access_token}}"
+					}
+				],
+				"body": {},
+				"url": {
+					"raw": "http://0.0.0.0:{{portLicSrv}}/v1/organizations/e254f8c-c442-4ebe-a82a-e2fc1d1ff78a/licenses/f3831f8c-c338-4ebe-a82a-e2fc1d1ff78a/feign",
+					"protocol": "http",
+					"host": [
+						"0",
+						"0",
+						"0",
+						"0"
+					],
+					"port": "{{portLicSrv}}",
+					"path": [
+						"v1",
+						"organizations",
+						"e254f8c-c442-4ebe-a82a-e2fc1d1ff78a",
+						"licenses",
+						"f3831f8c-c338-4ebe-a82a-e2fc1d1ff78a",
+						"feign"
+					]
+				}
+			},
+			"response": [
+				{
+					"id": "d856f6b3-65b8-4c85-888e-ee7d8fcd6764",
+					"name": "GET license f3831f8c-c338-4ebe-a82a-e2fc1d1ff78a",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"body": {},
+						"url": {
+							"raw": "http://0.0.0.0:{{portLicSrv}}/v1/organizations/e254f8c-c442-4ebe-a82a-e2fc1d1ff78a/licenses/f3831f8c-c338-4ebe-a82a-e2fc1d1ff78a",
+							"protocol": "http",
+							"host": [
+								"0",
+								"0",
+								"0",
+								"0"
+							],
+							"port": "{{portLicSrv}}",
+							"path": [
+								"v1",
+								"organizations",
+								"e254f8c-c442-4ebe-a82a-e2fc1d1ff78a",
+								"licenses",
+								"f3831f8c-c338-4ebe-a82a-e2fc1d1ff78a"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json;charset=UTF-8",
+							"name": "Content-Type",
+							"description": "The mime type of this content"
+						},
+						{
+							"key": "Date",
+							"value": "Thu, 07 Jun 2018 14:49:12 GMT",
+							"name": "Date",
+							"description": "The date and time that the message was sent"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked",
+							"name": "Transfer-Encoding",
+							"description": "The form of encoding used to safely transfer the entity to the user. Currently defined methods are: chunked, compress, deflate, gzip, identity."
+						},
+						{
+							"key": "X-Application-Context",
+							"value": "licensingservice:default",
+							"name": "X-Application-Context",
+							"description": "Custom header"
+						}
+					],
+					"cookie": [],
+					"body": "{\"licenseId\":\"f3831f8c-c338-4ebe-a82a-e2fc1d1ff78a\",\"organizationId\":\"e254f8c-c442-4ebe-a82a-e2fc1d1ff78a\",\"productName\":\"customer-crm-co\",\"licenseType\":\"user\",\"licenseMax\":100,\"licenseAllocated\":5,\"comment\":\"I AM IN THE DEFAULT\"}"
+				},
+				{
+					"id": "8c2058b8-6a3f-4ef9-9c03-6e8f4e34c642",
+					"name": "GET license 1",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"body": {},
+						"url": {
+							"raw": "http://localhost:8080/v1/organizations/1/licenses/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"v1",
+								"organizations",
+								"1",
+								"licenses",
+								"1"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json;charset=UTF-8",
+							"name": "Content-Type",
+							"description": "The mime type of this content"
+						},
+						{
+							"key": "Date",
+							"value": "Thu, 07 Jun 2018 09:58:59 GMT",
+							"name": "Date",
+							"description": "The date and time that the message was sent"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked",
+							"name": "Transfer-Encoding",
+							"description": "The form of encoding used to safely transfer the entity to the user. Currently defined methods are: chunked, compress, deflate, gzip, identity."
+						},
+						{
+							"key": "X-Application-Context",
+							"value": "application",
+							"name": "X-Application-Context",
+							"description": "Custom header"
+						}
+					],
+					"cookie": [],
+					"body": "{\"id\":\"1\",\"organizationId\":\"1\",\"productName\":\"Teleco\",\"licenseType\":\"Seat\"}"
+				}
+			]
+		},
+		{
+			"_postman_id": "2ca4d7cb-9280-4978-9bfa-7ac5f915fa8b",
+			"name": "DELETE license",
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer {{access_token}}"
+					}
+				],
+				"body": {},
+				"url": {
+					"raw": "http://localhost:5555/api/licensingservice/v1/organizations/442adb6e-fa58-47f3-9ca2-ed1fecdfe86c/licenses/08dbe05-606e-4dad-9d33-90ef10e334f9",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5555",
+					"path": [
+						"api",
+						"licensingservice",
+						"v1",
+						"organizations",
+						"442adb6e-fa58-47f3-9ca2-ed1fecdfe86c",
+						"licenses",
+						"08dbe05-606e-4dad-9d33-90ef10e334f9"
+					]
+				}
+			},
+			"response": [
+				{
+					"id": "943a8d99-2c64-4ef8-8120-d00bd7039e31",
+					"name": "GET license 1",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"body": {},
+						"url": {
+							"raw": "http://localhost:8080/v1/organizations/1/licenses/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"v1",
+								"organizations",
+								"1",
+								"licenses",
+								"1"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json;charset=UTF-8",
+							"name": "Content-Type",
+							"description": "The mime type of this content"
+						},
+						{
+							"key": "Date",
+							"value": "Thu, 07 Jun 2018 09:58:59 GMT",
+							"name": "Date",
+							"description": "The date and time that the message was sent"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked",
+							"name": "Transfer-Encoding",
+							"description": "The form of encoding used to safely transfer the entity to the user. Currently defined methods are: chunked, compress, deflate, gzip, identity."
+						},
+						{
+							"key": "X-Application-Context",
+							"value": "application",
+							"name": "X-Application-Context",
+							"description": "Custom header"
+						}
+					],
+					"cookie": [],
+					"body": "{\"id\":\"1\",\"organizationId\":\"1\",\"productName\":\"Teleco\",\"licenseType\":\"Seat\"}"
+				}
+			]
+		}
+	]
+}

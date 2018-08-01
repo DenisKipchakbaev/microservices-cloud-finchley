@@ -1,11 +1,12 @@
 {
 	"info": {
-		"_postman_id": "6d5feecd-e23a-4ce8-aa68-48a1dcbb2aa1",
-		"name": "auth-server final",
+		"_postman_id": "624c7087-346e-4da5-9d9c-b73cab93bbef",
+		"name": "auth-server Finchley",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
 	},
 	"item": [
 		{
+			"_postman_id": "5bcead4c-49cf-48a7-a77f-19b2b1ff4f9b",
 			"name": "Get token USER",
 			"event": [
 				{
@@ -49,31 +50,27 @@
 						{
 							"key": "grant_type",
 							"value": "password",
-							"type": "text",
-							"description": ""
+							"type": "text"
 						},
 						{
 							"key": "scope",
 							"value": "webclient",
-							"type": "text",
-							"description": ""
+							"type": "text"
 						},
 						{
 							"key": "username",
 							"value": "john.carnell",
-							"type": "text",
-							"description": ""
+							"type": "text"
 						},
 						{
 							"key": "password",
 							"value": "password1",
-							"type": "text",
-							"description": ""
+							"type": "text"
 						}
 					]
 				},
 				"url": {
-					"raw": "http://localhost:5555/api/authenticationservice/oauth/token",
+					"raw": "http://localhost:5555/api/authserver/oauth/token",
 					"protocol": "http",
 					"host": [
 						"localhost"
@@ -81,7 +78,7 @@
 					"port": "5555",
 					"path": [
 						"api",
-						"authenticationservice",
+						"authserver",
 						"oauth",
 						"token"
 					]
@@ -90,6 +87,7 @@
 			"response": []
 		},
 		{
+			"_postman_id": "c099605d-1b3b-4fed-ae2a-a3745a0b6bf4",
 			"name": "Get token ADMIN",
 			"event": [
 				{
@@ -133,31 +131,27 @@
 						{
 							"key": "grant_type",
 							"value": "password",
-							"type": "text",
-							"description": ""
+							"type": "text"
 						},
 						{
 							"key": "scope",
 							"value": "webclient",
-							"type": "text",
-							"description": ""
+							"type": "text"
 						},
 						{
 							"key": "username",
 							"value": "william.woodward",
-							"type": "text",
-							"description": ""
+							"type": "text"
 						},
 						{
 							"key": "password",
 							"value": "password2",
-							"type": "text",
-							"description": ""
+							"type": "text"
 						}
 					]
 				},
 				"url": {
-					"raw": "http://localhost:5555/api/authenticationservice/oauth/token",
+					"raw": "http://localhost:5555/api/authserver/oauth/token",
 					"protocol": "http",
 					"host": [
 						"localhost"
@@ -165,7 +159,7 @@
 					"port": "5555",
 					"path": [
 						"api",
-						"authenticationservice",
+						"authserver",
 						"oauth",
 						"token"
 					]
@@ -174,6 +168,86 @@
 			"response": []
 		},
 		{
+			"_postman_id": "19feb75e-5261-4308-89fa-f4559e9479ac",
+			"name": "Get token ADMIN Direct",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "174360a9-17b3-44c9-9663-045de6923cc9",
+						"type": "text/javascript",
+						"exec": [
+							"var jsonData = JSON.parse(responseBody);",
+							"postman.setEnvironmentVariable(\"access_token\", jsonData.access_token);"
+						]
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "thisissecret",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "eagleeye",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/x-www-form-urlencoded"
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "grant_type",
+							"value": "password",
+							"type": "text"
+						},
+						{
+							"key": "scope",
+							"value": "webclient",
+							"type": "text"
+						},
+						{
+							"key": "username",
+							"value": "william.woodward",
+							"type": "text"
+						},
+						{
+							"key": "password",
+							"value": "password2",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:8901/oauth/token",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8901",
+					"path": [
+						"oauth",
+						"token"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"_postman_id": "9bee85f9-6486-40c2-954a-15951651ddd8",
 			"name": "auth callback /user",
 			"request": {
 				"auth": {
@@ -188,7 +262,7 @@
 				],
 				"body": {},
 				"url": {
-					"raw": "http://localhost:5555/api/authenticationservice/user",
+					"raw": "http://localhost:5555/api/authserver/user",
 					"protocol": "http",
 					"host": [
 						"localhost"
@@ -196,7 +270,7 @@
 					"port": "5555",
 					"path": [
 						"api",
-						"authenticationservice",
+						"authserver",
 						"user"
 					]
 				}
@@ -204,6 +278,7 @@
 			"response": []
 		},
 		{
+			"_postman_id": "e85004e8-fb79-4c93-9275-5688e59efb8e",
 			"name": "auth callback /user direct",
 			"request": {
 				"auth": {

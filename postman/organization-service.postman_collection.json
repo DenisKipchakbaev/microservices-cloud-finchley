@@ -1,11 +1,12 @@
 {
 	"info": {
-		"_postman_id": "56b96c21-4ebd-4ca8-9119-ebf8a97bedf5",
-		"name": "organization-service final",
+		"_postman_id": "4aef824f-43f3-46fd-8387-715563f7a311",
+		"name": "organization-service Finchley",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
 	},
 	"item": [
 		{
+			"_postman_id": "c7639ed6-6d0f-4cd7-b8dc-1c59b4152070",
 			"name": "Update organization (Kafka msg) eureka routes",
 			"request": {
 				"auth": {
@@ -45,6 +46,7 @@
 			"response": []
 		},
 		{
+			"_postman_id": "7d9c4951-7c61-4acc-801c-7a10c5ca42cb",
 			"name": "GET Organization ch10",
 			"request": {
 				"method": "GET",

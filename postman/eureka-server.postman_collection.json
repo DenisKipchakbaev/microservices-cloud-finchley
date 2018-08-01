@@ -1,11 +1,12 @@
 {
 	"info": {
-		"_postman_id": "8a3edbcc-ae62-417c-bccb-382ba2747c65",
-		"name": "eureka-server final",
+		"_postman_id": "3d60129a-d09b-4ce7-a133-c9a5c2a1ba60",
+		"name": "eureka-server Finchley",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
 	},
 	"item": [
 		{
+			"_postman_id": "e5021438-97a8-4cce-b8ba-fdbd9f8fdd5e",
 			"name": "GET organization service info",
 			"request": {
 				"method": "GET",
@@ -32,6 +33,7 @@
 			"response": []
 		},
 		{
+			"_postman_id": "a76da7ec-1a1b-4c7d-bb1a-e466bd03a9ef",
 			"name": "GET zuul service info",
 			"request": {
 				"method": "GET",
@@ -43,7 +45,7 @@
 				],
 				"body": {},
 				"url": {
-					"raw": "localhost:8761/eureka/apps/zuulservice",
+					"raw": "localhost:8761/eureka/apps/zuul",
 					"host": [
 						"localhost"
 					],
@@ -51,13 +53,14 @@
 					"path": [
 						"eureka",
 						"apps",
-						"zuulservice"
+						"zuul"
 					]
 				}
 			},
 			"response": []
 		},
 		{
+			"_postman_id": "84a96ce7-03ce-46b7-ab82-a1436a6f15c0",
 			"name": "GET All registered services",
 			"request": {
 				"method": "GET",
@@ -77,6 +80,57 @@
 					"path": [
 						"eureka",
 						"apps"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"_postman_id": "71c911ea-7c97-4c67-8451-79ee133a95cd",
+			"name": "Actuator",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json"
+					}
+				],
+				"body": {},
+				"url": {
+					"raw": "localhost:8761/actuator",
+					"host": [
+						"localhost"
+					],
+					"port": "8761",
+					"path": [
+						"actuator"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"_postman_id": "fd9e6afc-5a14-4bf0-b11b-ec67a269445d",
+			"name": "Actuator configprops",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json"
+					}
+				],
+				"body": {},
+				"url": {
+					"raw": "localhost:8761/actuator/configprops",
+					"host": [
+						"localhost"
+					],
+					"port": "8761",
+					"path": [
+						"actuator",
+						"configprops"
 					]
 				}
 			},

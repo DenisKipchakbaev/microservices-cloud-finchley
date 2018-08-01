@@ -1,11 +1,12 @@
 {
 	"info": {
-		"_postman_id": "2490f97d-ae6a-4180-8349-5c386ca5b9f3",
-		"name": "config-server final",
+		"_postman_id": "a16da38c-414d-46e4-9992-40323ae52200",
+		"name": "config-server Finchley",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
 	},
 	"item": [
 		{
+			"_postman_id": "d3b6a4dd-de68-460a-a444-82a4fcb672d2",
 			"name": "GET default profile config licensing service",
 			"request": {
 				"method": "GET",
@@ -27,6 +28,51 @@
 			"response": []
 		},
 		{
+			"_postman_id": "c33ebeeb-b187-4c86-ba40-f3de21d3397b",
+			"name": "actuator health",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {},
+				"url": {
+					"raw": "http://localhost:8888/actuator/health",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8888",
+					"path": [
+						"actuator",
+						"health"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"_postman_id": "7bc9b879-ec61-4461-8e26-47527e138fff",
+			"name": "GET local profile config licensing service",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {},
+				"url": {
+					"raw": "http://localhost:8888/licensingservice/local",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8888",
+					"path": [
+						"licensingservice",
+						"local"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"_postman_id": "9e056e6c-7d09-4c2e-ae76-59bf9015f36b",
 			"name": "GET DEV config licensing service",
 			"request": {
 				"method": "GET",
@@ -48,6 +94,7 @@
 			"response": []
 		},
 		{
+			"_postman_id": "49904b60-5626-436e-b4df-c6a3f1839a00",
 			"name": "GET PROD config licensing service",
 			"request": {
 				"method": "GET",

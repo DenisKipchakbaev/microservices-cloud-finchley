@@ -4,8 +4,7 @@ Based on Spring Cloud Netflix stack.
 
 As a base was taken the examples of the Microservices in Action book by John Carnell: 
 https://github.com/carnellj/spmia_overview
-Migrated to Spring Cloud Finchley release (2.0.x).
-Additional modules have been introduced.
+Migrated to Spring Cloud Finchley release (2.0.x) and enhanced with additional monitoring and management modules.
 
 Project modules configured to run as docker containers as well as separate Spring Boot applications.
 
@@ -51,9 +50,9 @@ https://github.com/DenisKipchakbaev/cloud-finchley-config
 Fork it for your own projects.
 
 # Building the Docker Images
-To build the code examples as a docker image, open a command-line window change to the directory where you have downloaded the source code.
+To build the code examples as a docker image, open a command-line window, change to the directory where you have downloaded the source code.
 
-Run the following maven command.  This command will execute the compiling and packaging of the Spring Boot powered modules as well as create docker images harnessing [Spotify dockerfile maven plugin] (https://github.com/spotify/dockerfile-maven) defined in the pom.xml file.  
+Run the following maven command.  This command will execute the compiling and packaging of the Spring Boot powered modules as well as create docker images harnessing [Spotify Dockerfile maven plugin] (https://github.com/spotify/dockerfile-maven) defined in the pom.xml file.  
    
    **mvn clean package**
 
@@ -63,12 +62,11 @@ If everything builds successfully you should see a message indicating that the b
 
 Now we are going to use docker-compose to start the actual image.  To start the docker image,
 change to the directory containing  your source code. 
-BUILD_NAME environment variable should be present as in previous step. 
 Issue the following docker-compose command:
 
    **export BUILD_NAME=0.0.1 && docker-compose -f docker/common/docker-compose.yml up**
 
-If everything starts correctly you should see a bunch of Spring Boot information fly by on standard out.  At this point all of the services needed for the chapter code examples will be running.
+If everything starts correctly you should see a bunch of Spring Boot information fly by on standard out.  At this point all of the services will be running.
 
 # Running the services as Spring Boot applications
 
@@ -83,33 +81,35 @@ A quick test to see if you have the JCE Unlimited Strength Jurisdiction Policy f
 
   **$JAVA_HOME/bin/jrunscript -e 'print (javax.crypto.Cipher.getMaxAllowedKeyLength("RC5") >= 256);'**
 
-installation (adjust for your JDK dir):
+Installing JCE libs for oracle JDK (adjust for your JDK dir):
 
 cd /tmp/ && \
 	curl -k -LO "http://download.oracle.com/otn-pub/java/jce/8/jce_policy-8.zip" -H 'Cookie: oraclelicense=accept-securebackup-cookie' && \
 	unzip jce_policy-8.zip && \
 	rm jce_policy-8.zip && \
-	yes | sudo cp -v /tmp/UnlimitedJCEPolicyJDK8/*.jar /usr/lib/jvm/java-8-openjdk-amd64/jre/lib/security/
+	yes | sudo cp -v /tmp/UnlimitedJCEPolicyJDK8/*.jar /usr/lib/jvm/oracle-jdk-8/jre/lib/security/
 
 
-- In 'Run Configurations' for Spring Boot apps: 
-	authentication-server 
+- In 'Run Configurations' of Spring Boot apps: 
+	auth-server 
 	licensing-service
 	organisation-service
 
 configure:
 
-profile: local   (to use authenticationservice-local.yml file in from git config repo)
+profile: local (to use *-local.yml file from config git repo)
 Environment variables:
 ENCRYPT_KEY=IMSYMMETRIC
 (The key used to encrypt passwords. All services with encrypted properties in config require ENCRYPT_KEY environment variable)
 
+Set profile local also for spring-boot-admin.
 
-- Start postgres, kafka, redis, logspout as docker containers:
+
+- Start postgres, zookeeper, kafka, redis, and other auxiliary modules as docker containers:
 
    **docker-compose -f docker/local/docker-compose.yml up**
    
-- Start Spring Boot apps, starting from config-server and eureka
+- Start Spring Boot apps, starting from eureka and config-server.
 
 # Postman
 
