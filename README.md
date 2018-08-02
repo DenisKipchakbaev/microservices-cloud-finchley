@@ -94,15 +94,19 @@ cd /tmp/ && \
 	auth-server 
 	licensing-service
 	organisation-service
+	spring-boot-admin
+	eureka-server
 
-configure:
+set profile: local (to use *-local.yml file from config git repo)
 
-profile: local (to use *-local.yml file from config git repo)
-Environment variables:
+- In 'Run Configurations' of Spring Boot apps: 
+	auth-server 
+	licensing-service
+	organisation-service
+	
+set Environment variables:
 ENCRYPT_KEY=IMSYMMETRIC
 (The key used to encrypt passwords. All services with encrypted properties in config require ENCRYPT_KEY environment variable)
-
-Set profile local also for spring-boot-admin.
 
 
 - Start postgres, zookeeper, kafka, redis, and other auxiliary modules as docker containers:
@@ -114,3 +118,7 @@ Set profile local also for spring-boot-admin.
 # Postman
 
 There is a collection of API calls in the directory /postman for Postman app
+
+# Push to Docker Hub
+
+To push to docker hub should specify goal dockerfile:push and dockerfile.username, dockerfile.password parameters in maven build properties. More info https://github.com/spotify/dockerfile-maven#authenticating-with-maven-pomxml

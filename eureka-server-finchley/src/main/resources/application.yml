@@ -1,6 +1,13 @@
-logging.file: target/eureka.log
-
 server.port: ${PORT:8761}
+
+# debug: true # enable generation of autoconfiguration report in log
+
+logging:
+  file: target/eureka.log
+  level: #Setting logging levels
+    com.netflix: WARN
+    org.springframework: WARN 
+    es.in2.cloud: DEBUG
 
 eureka:
   client:
@@ -8,3 +15,27 @@ eureka:
     fetchRegistry: false
     service-url:
       defaultZone: http://eurekaserver:8761/eureka # eurekaserver is the docker container hostname
+   
+      
+---
+
+spring:
+  profiles: local
+  
+# Expose all actuator endpoints
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
+#       exclude: env,beans
+  endpoint:
+    health:
+      showDetails: when-authorized #show details in actuator/health endpoint
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:8761/eureka
+  instance:
+    leaseRenewalIntervalInSeconds: 30 #Heartbeat interval. Do not change default interval for production. Default 30
