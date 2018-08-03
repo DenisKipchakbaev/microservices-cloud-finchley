@@ -5,6 +5,8 @@ import java.util.List;
 import java.util.Random;
 import java.util.UUID;
 
+import javax.servlet.http.HttpServletRequest;
+
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -13,6 +15,8 @@ import org.slf4j.LoggerFactory;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.web.context.request.RequestContextHolder;
+import org.springframework.web.context.request.ServletRequestAttributes;
 
 import com.netflix.hystrix.contrib.javanica.annotation.HystrixCommand;
 import com.netflix.hystrix.contrib.javanica.annotation.HystrixProperty;
@@ -51,7 +55,14 @@ public class LicenseService {
         switch (clientType) {
             case "feign":
                 System.out.println("I am using the feign client");
-                organization = organizationFeignClient.getOrganization(organizationId);
+                
+                //pass authorization header to Feign call
+                HttpServletRequest httpServletRequest = ((ServletRequestAttributes)
+                		RequestContextHolder
+                			.getRequestAttributes()).getRequest();
+                
+                organization = organizationFeignClient.getOrganization(
+                		httpServletRequest.getHeader("Authorization"), organizationId);
                 break;
             case "rest":
                 System.out.println("I am using the rest client");

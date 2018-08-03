@@ -6,11 +6,11 @@
 	},
 	"item": [
 		{
-			"_postman_id": "4e971231-1b91-42b7-b99b-3b95866fb66b",
+			"_postman_id": "b2e39a54-d746-422e-86f5-7da3b4cc5530",
 			"name": "Actuator",
 			"item": [
 				{
-					"_postman_id": "dee14936-3d20-4dda-a325-c42a498b721f",
+					"_postman_id": "362238cf-0768-4bdb-a8e6-131c0e0d9c76",
 					"name": "actuator",
 					"request": {
 						"method": "GET",
@@ -38,7 +38,7 @@
 					"response": []
 				},
 				{
-					"_postman_id": "efcbc940-6795-442a-81e9-fb0a85a4a44f",
+					"_postman_id": "69745b87-430d-46a3-bc26-e637ac08d4d2",
 					"name": "actuator mappings",
 					"request": {
 						"method": "GET",
@@ -67,7 +67,7 @@
 					"response": []
 				},
 				{
-					"_postman_id": "c6f3a024-67cf-4d65-a882-ed245757cd3f",
+					"_postman_id": "fed284f5-4aa2-48ae-902d-69458faa9d7d",
 					"name": "actuator configprops (shows all autoconfigured props)",
 					"request": {
 						"method": "GET",
@@ -96,7 +96,7 @@
 					"response": []
 				},
 				{
-					"_postman_id": "59eee2e5-c786-4211-8ae1-412b6ad37f77",
+					"_postman_id": "2126eba6-ad3e-41c5-baff-5e59a6202b10",
 					"name": "actuator beans (loaded Spring beans)",
 					"request": {
 						"method": "GET",
@@ -125,7 +125,7 @@
 					"response": []
 				},
 				{
-					"_postman_id": "a6c5bb4a-1c1b-4745-906c-055bd9b08080",
+					"_postman_id": "bc42a203-697a-44db-9d95-57c020d1c573",
 					"name": "actuator logfile",
 					"request": {
 						"method": "GET",
@@ -154,7 +154,7 @@
 					"response": []
 				},
 				{
-					"_postman_id": "7d645827-53e2-4f6a-8bfc-286575d0a953",
+					"_postman_id": "1e6d7648-c8b0-421f-9ef4-2f59689770ff",
 					"name": "actuator loggers (Log levels)",
 					"request": {
 						"method": "GET",
@@ -184,7 +184,7 @@
 					"response": []
 				},
 				{
-					"_postman_id": "8ea0d55d-6e03-4781-8e02-0048c165551e",
+					"_postman_id": "f475b6f9-143e-4fbe-997e-bb0980b99b69",
 					"name": "actuator loggers - org.springframework.boot",
 					"request": {
 						"method": "GET",
@@ -214,7 +214,7 @@
 					"response": []
 				},
 				{
-					"_postman_id": "79a1e646-825e-4333-81d4-773a66c02c72",
+					"_postman_id": "45cb8afa-62d4-4e33-8c1f-f27d20c0f795",
 					"name": "actuator heath",
 					"request": {
 						"method": "GET",
@@ -243,7 +243,7 @@
 					"response": []
 				},
 				{
-					"_postman_id": "04556b87-2234-4fd0-b1ec-7a8ae7f9b632",
+					"_postman_id": "fd3ce194-01ee-488e-9378-753b730a32cf",
 					"name": "actuator env",
 					"request": {
 						"method": "GET",
@@ -272,7 +272,7 @@
 					"response": []
 				},
 				{
-					"_postman_id": "3695b9ad-dbf1-46ce-8c9c-0ba5d8db63d5",
+					"_postman_id": "94454389-61fe-43ed-a449-996303aa6b1f",
 					"name": "actuator archaius",
 					"request": {
 						"method": "GET",
@@ -301,7 +301,7 @@
 					"response": []
 				},
 				{
-					"_postman_id": "5c2e3120-50bf-41af-999c-0a537fd1b625",
+					"_postman_id": "52121b9b-3b86-4d48-96f6-d8265aaf432a",
 					"name": "actuator auditevents",
 					"request": {
 						"method": "GET",
@@ -330,7 +330,7 @@
 					"response": []
 				},
 				{
-					"_postman_id": "8e2bf8af-e572-4434-a53d-d2aeb1c62c02",
+					"_postman_id": "c5b7ddb5-65c1-4645-a0ec-5141c575ae1d",
 					"name": "actuator conditions",
 					"request": {
 						"method": "GET",
@@ -359,7 +359,7 @@
 					"response": []
 				},
 				{
-					"_postman_id": "98e33136-b4c7-4247-a916-5666bd756ed9",
+					"_postman_id": "53ac72a3-8897-44f9-a0c0-f62fcb6fb4fa",
 					"name": "actuator heapdump (postman crushes)",
 					"request": {
 						"method": "GET",
@@ -388,7 +388,7 @@
 					"response": []
 				},
 				{
-					"_postman_id": "486a5a49-48f9-4d6a-a2d1-73c115cf0816",
+					"_postman_id": "0ac7f92b-fa01-4523-801a-f597e3516ab0",
 					"name": "actuator info",
 					"request": {
 						"method": "GET",
@@ -417,7 +417,7 @@
 					"response": []
 				},
 				{
-					"_postman_id": "a3bb9f74-61d8-41cb-aaab-5e9de57f2f1b",
+					"_postman_id": "316ca860-a4d2-4f8e-a432-24a9ee448b60",
 					"name": "actuator threaddump",
 					"request": {
 						"method": "GET",
@@ -446,7 +446,7 @@
 					"response": []
 				},
 				{
-					"_postman_id": "b505925a-fdc7-42e6-b30c-ac6bed21708a",
+					"_postman_id": "de7c74b7-5282-43aa-9077-fa9032d555c7",
 					"name": "actuator metrics (list)",
 					"request": {
 						"method": "GET",
@@ -475,7 +475,7 @@
 					"response": []
 				},
 				{
-					"_postman_id": "fd2026e2-814f-409c-a180-3db48e258c00",
+					"_postman_id": "c482329b-cd92-4471-b34c-9eacc7572a26",
 					"name": "actuator metrics - uptime",
 					"request": {
 						"method": "GET",
@@ -505,7 +505,7 @@
 					"response": []
 				},
 				{
-					"_postman_id": "6aa40eb9-9c81-4623-aa47-be7f1498b109",
+					"_postman_id": "1dbb02fe-6aa5-47d0-ba5b-d0adc9236df7",
 					"name": "actuator scheduledtasks",
 					"request": {
 						"method": "GET",
@@ -534,7 +534,7 @@
 					"response": []
 				},
 				{
-					"_postman_id": "e4f0e92a-4e83-42b9-b6e0-166a9ce9f8bb",
+					"_postman_id": "51878b8d-c77b-4849-bef2-828178ab8ed7",
 					"name": "actuator httptrace (call history)",
 					"request": {
 						"method": "GET",
@@ -563,7 +563,7 @@
 					"response": []
 				},
 				{
-					"_postman_id": "f9fce1f2-1c98-4430-ad0a-f4f3cf5b855f",
+					"_postman_id": "983c0a55-2bdb-4b88-b401-99ac8c51d6f7",
 					"name": "actuator refresh",
 					"request": {
 						"method": "POST",
@@ -592,7 +592,7 @@
 					"response": []
 				},
 				{
-					"_postman_id": "0068b675-b14d-49b9-8f2d-47ece1c8ebcf",
+					"_postman_id": "ef59229c-ad2e-409d-916e-8dcfbd2675cc",
 					"name": "actuator features",
 					"request": {
 						"method": "GET",
@@ -621,7 +621,7 @@
 					"response": []
 				},
 				{
-					"_postman_id": "b3c31442-b892-48d6-8bf1-cd363f6dda1e",
+					"_postman_id": "05f3d15a-9007-401c-8b07-2bcbbbd7dc29",
 					"name": "actuator service-registry",
 					"request": {
 						"method": "GET",
@@ -650,7 +650,7 @@
 					"response": []
 				},
 				{
-					"_postman_id": "74f3cb51-3d00-450a-9b4c-8d07ab09753c",
+					"_postman_id": "3d926654-1e2a-4979-924e-809cd58be662",
 					"name": "actuator bindings (stream)",
 					"request": {
 						"method": "GET",
@@ -679,7 +679,7 @@
 					"response": []
 				},
 				{
-					"_postman_id": "a53045ca-d8d0-4fb8-9a3e-e8eb5c0e6dbc",
+					"_postman_id": "077d44e4-29e9-4cf8-b271-e98bd392c692",
 					"name": "actuator channels (stream)",
 					"request": {
 						"method": "GET",
@@ -710,7 +710,7 @@
 			]
 		},
 		{
-			"_postman_id": "1284667b-6596-45a8-9efa-3b5397664860",
+			"_postman_id": "5a6bb4a4-0046-4ae3-90fe-22a2865bde1d",
 			"name": "GET license 1 through Gateway - Rest template - eureka routes",
 			"request": {
 				"method": "GET",
@@ -741,7 +741,7 @@
 			},
 			"response": [
 				{
-					"id": "fb224cc4-d8af-43fd-ac68-c8520fa1de81",
+					"id": "fe8e8fe7-d75c-4289-b55c-349f2192d2bb",
 					"name": "GET license 1",
 					"originalRequest": {
 						"method": "GET",
@@ -796,7 +796,7 @@
 					"body": "{\"id\":\"1\",\"organizationId\":\"1\",\"productName\":\"Teleco\",\"licenseType\":\"Seat\"}"
 				},
 				{
-					"id": "ce8ab75e-34a6-4daf-a9ca-2394d4ccb082",
+					"id": "94de167b-9ab1-4cdd-9cec-3de36a0229d7",
 					"name": "GET license f3831f8c-c338-4ebe-a82a-e2fc1d1ff78a",
 					"originalRequest": {
 						"method": "GET",
@@ -856,7 +856,7 @@
 			]
 		},
 		{
-			"_postman_id": "9a2074a5-8ec9-44fc-bec7-33e839c353bf",
+			"_postman_id": "e9baed7c-9a35-4a76-91cd-8c1071280f5e",
 			"name": "GET license 2 through Gateway - Rest Template - eureka routes",
 			"request": {
 				"method": "GET",
@@ -887,7 +887,7 @@
 			},
 			"response": [
 				{
-					"id": "e0c63f91-e051-4bd2-91d5-4b1c3ecaac89",
+					"id": "bae24f23-e133-4357-992b-f16d09959571",
 					"name": "GET license f3831f8c-c338-4ebe-a82a-e2fc1d1ff78a",
 					"originalRequest": {
 						"method": "GET",
@@ -945,7 +945,7 @@
 					"body": "{\"licenseId\":\"f3831f8c-c338-4ebe-a82a-e2fc1d1ff78a\",\"organizationId\":\"e254f8c-c442-4ebe-a82a-e2fc1d1ff78a\",\"productName\":\"customer-crm-co\",\"licenseType\":\"user\",\"licenseMax\":100,\"licenseAllocated\":5,\"comment\":\"I AM IN THE DEFAULT\"}"
 				},
 				{
-					"id": "79affb80-1e49-4e22-8051-2c5bfd867aa1",
+					"id": "99cd1946-ab71-4cee-8906-df62120fa279",
 					"name": "GET license 1",
 					"originalRequest": {
 						"method": "GET",
@@ -1002,7 +1002,7 @@
 			]
 		},
 		{
-			"_postman_id": "a3b068f8-1c76-4b53-a34c-6b6273758fea",
+			"_postman_id": "65e36e50-2ed0-4145-8687-de0586b8cb25",
 			"name": "Refresh config (actuator)",
 			"request": {
 				"method": "POST",
@@ -1031,7 +1031,7 @@
 			"response": []
 		},
 		{
-			"_postman_id": "d4805b33-2165-44c7-8232-b12279ab6fe6",
+			"_postman_id": "f1dc611f-135e-443e-a850-783b5f5255bb",
 			"name": "GET licenses by Org w Gateway (with timeout test)",
 			"request": {
 				"method": "GET",
@@ -1062,7 +1062,7 @@
 			},
 			"response": [
 				{
-					"id": "bec10a7b-ee60-416f-80c6-2b69489191f6",
+					"id": "98a007c9-1caf-4de1-8800-a32dfa267d48",
 					"name": "GET license 1",
 					"originalRequest": {
 						"method": "GET",
@@ -1117,7 +1117,7 @@
 					"body": "{\"id\":\"1\",\"organizationId\":\"1\",\"productName\":\"Teleco\",\"licenseType\":\"Seat\"}"
 				},
 				{
-					"id": "85e39b39-79a5-4c40-9122-a26f41aa6458",
+					"id": "e54797a4-1ada-4934-be0c-f6721a45888a",
 					"name": "GET license f3831f8c-c338-4ebe-a82a-e2fc1d1ff78a",
 					"originalRequest": {
 						"method": "GET",
@@ -1177,7 +1177,7 @@
 			]
 		},
 		{
-			"_postman_id": "aca4d9c2-5695-4888-837e-f3fb4832c383",
+			"_postman_id": "292c0118-61de-40b1-9573-4a38ca321b93",
 			"name": "GET licenses with client type Discovery",
 			"request": {
 				"method": "GET",
@@ -1212,7 +1212,7 @@
 			},
 			"response": [
 				{
-					"id": "f59668e3-7d92-4799-afc9-b02da9dfea26",
+					"id": "9e0ac53e-c034-4c39-a61b-7a890e17b221",
 					"name": "GET license f3831f8c-c338-4ebe-a82a-e2fc1d1ff78a",
 					"originalRequest": {
 						"method": "GET",
@@ -1270,7 +1270,7 @@
 					"body": "{\"licenseId\":\"f3831f8c-c338-4ebe-a82a-e2fc1d1ff78a\",\"organizationId\":\"e254f8c-c442-4ebe-a82a-e2fc1d1ff78a\",\"productName\":\"customer-crm-co\",\"licenseType\":\"user\",\"licenseMax\":100,\"licenseAllocated\":5,\"comment\":\"I AM IN THE DEFAULT\"}"
 				},
 				{
-					"id": "60a1cb41-5e7b-41b2-97ab-b8a80a60c10d",
+					"id": "17aeb2a6-2b29-44bf-9cf1-8bda41afad2f",
 					"name": "GET license 1",
 					"originalRequest": {
 						"method": "GET",
@@ -1327,7 +1327,7 @@
 			]
 		},
 		{
-			"_postman_id": "bda3006e-581f-4c46-9065-c1415fb425e8",
+			"_postman_id": "ce93d3a8-4a8d-438f-b89d-83e7ab2e2a06",
 			"name": "GET licenses with client type Feign",
 			"request": {
 				"method": "GET",
@@ -1339,7 +1339,7 @@
 				],
 				"body": {},
 				"url": {
-					"raw": "http://0.0.0.0:{{portLicSrv}}/v1/organizations/e254f8c-c442-4ebe-a82a-e2fc1d1ff78a/licenses/f3831f8c-c338-4ebe-a82a-e2fc1d1ff78a/feign",
+					"raw": "http://0.0.0.0:5555/api/licensingservice/v1/organizations/e254f8c-c442-4ebe-a82a-e2fc1d1ff78a/licenses/f3831f8c-c338-4ebe-a82a-e2fc1d1ff78a/feign",
 					"protocol": "http",
 					"host": [
 						"0",
@@ -1347,8 +1347,10 @@
 						"0",
 						"0"
 					],
-					"port": "{{portLicSrv}}",
+					"port": "5555",
 					"path": [
+						"api",
+						"licensingservice",
 						"v1",
 						"organizations",
 						"e254f8c-c442-4ebe-a82a-e2fc1d1ff78a",
@@ -1360,7 +1362,7 @@
 			},
 			"response": [
 				{
-					"id": "d856f6b3-65b8-4c85-888e-ee7d8fcd6764",
+					"id": "0290a199-d1e4-437f-a0e0-c0b1d00d4511",
 					"name": "GET license f3831f8c-c338-4ebe-a82a-e2fc1d1ff78a",
 					"originalRequest": {
 						"method": "GET",
@@ -1418,7 +1420,7 @@
 					"body": "{\"licenseId\":\"f3831f8c-c338-4ebe-a82a-e2fc1d1ff78a\",\"organizationId\":\"e254f8c-c442-4ebe-a82a-e2fc1d1ff78a\",\"productName\":\"customer-crm-co\",\"licenseType\":\"user\",\"licenseMax\":100,\"licenseAllocated\":5,\"comment\":\"I AM IN THE DEFAULT\"}"
 				},
 				{
-					"id": "8c2058b8-6a3f-4ef9-9c03-6e8f4e34c642",
+					"id": "7faff68a-e4ab-4833-aa06-88cb267cd90d",
 					"name": "GET license 1",
 					"originalRequest": {
 						"method": "GET",
@@ -1475,7 +1477,7 @@
 			]
 		},
 		{
-			"_postman_id": "2ca4d7cb-9280-4978-9bfa-7ac5f915fa8b",
+			"_postman_id": "51d9c5cc-d947-485c-a3cd-e41f5db39fae",
 			"name": "DELETE license",
 			"request": {
 				"method": "DELETE",
@@ -1506,7 +1508,7 @@
 			},
 			"response": [
 				{
-					"id": "943a8d99-2c64-4ef8-8120-d00bd7039e31",
+					"id": "8bd46951-4764-4cc9-a8ca-6dc0dec45b50",
 					"name": "GET license 1",
 					"originalRequest": {
 						"method": "GET",
