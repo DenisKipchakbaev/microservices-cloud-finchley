@@ -6,11 +6,11 @@
 	},
 	"item": [
 		{
-			"_postman_id": "b2e39a54-d746-422e-86f5-7da3b4cc5530",
+			"_postman_id": "e123d201-71dd-46d9-af67-b13db2826d2a",
 			"name": "Actuator",
 			"item": [
 				{
-					"_postman_id": "362238cf-0768-4bdb-a8e6-131c0e0d9c76",
+					"_postman_id": "bb4791c7-0dc2-47ef-a59d-551763a9cdb0",
 					"name": "actuator",
 					"request": {
 						"method": "GET",
@@ -38,7 +38,7 @@
 					"response": []
 				},
 				{
-					"_postman_id": "69745b87-430d-46a3-bc26-e637ac08d4d2",
+					"_postman_id": "477e0f8b-86cd-489d-8bc6-79a3d6b6fc18",
 					"name": "actuator mappings",
 					"request": {
 						"method": "GET",
@@ -67,7 +67,7 @@
 					"response": []
 				},
 				{
-					"_postman_id": "fed284f5-4aa2-48ae-902d-69458faa9d7d",
+					"_postman_id": "5f26db89-edcd-4056-9548-02916bae2ff7",
 					"name": "actuator configprops (shows all autoconfigured props)",
 					"request": {
 						"method": "GET",
@@ -96,7 +96,7 @@
 					"response": []
 				},
 				{
-					"_postman_id": "2126eba6-ad3e-41c5-baff-5e59a6202b10",
+					"_postman_id": "fd56d78a-e047-49be-a00e-5db36bec5d6e",
 					"name": "actuator beans (loaded Spring beans)",
 					"request": {
 						"method": "GET",
@@ -125,7 +125,7 @@
 					"response": []
 				},
 				{
-					"_postman_id": "bc42a203-697a-44db-9d95-57c020d1c573",
+					"_postman_id": "ab159c72-860a-4eae-a403-1a2ed155d91b",
 					"name": "actuator logfile",
 					"request": {
 						"method": "GET",
@@ -154,7 +154,7 @@
 					"response": []
 				},
 				{
-					"_postman_id": "1e6d7648-c8b0-421f-9ef4-2f59689770ff",
+					"_postman_id": "91f8f5bb-5557-43aa-8061-afd3e0c4ffe2",
 					"name": "actuator loggers (Log levels)",
 					"request": {
 						"method": "GET",
@@ -184,7 +184,7 @@
 					"response": []
 				},
 				{
-					"_postman_id": "f475b6f9-143e-4fbe-997e-bb0980b99b69",
+					"_postman_id": "79413b20-aad2-4dbd-a2a9-f27cdcb568e4",
 					"name": "actuator loggers - org.springframework.boot",
 					"request": {
 						"method": "GET",
@@ -214,7 +214,7 @@
 					"response": []
 				},
 				{
-					"_postman_id": "45cb8afa-62d4-4e33-8c1f-f27d20c0f795",
+					"_postman_id": "5b0b5e33-6ecc-4999-891a-a8736a865f5b",
 					"name": "actuator heath",
 					"request": {
 						"method": "GET",
@@ -243,7 +243,7 @@
 					"response": []
 				},
 				{
-					"_postman_id": "fd3ce194-01ee-488e-9378-753b730a32cf",
+					"_postman_id": "5a6eb9d3-3667-4d37-9f47-48b9a5f7d6d2",
 					"name": "actuator env",
 					"request": {
 						"method": "GET",
@@ -272,7 +272,7 @@
 					"response": []
 				},
 				{
-					"_postman_id": "94454389-61fe-43ed-a449-996303aa6b1f",
+					"_postman_id": "a5047834-7976-4625-997c-f2ff78658b9b",
 					"name": "actuator archaius",
 					"request": {
 						"method": "GET",
@@ -301,7 +301,7 @@
 					"response": []
 				},
 				{
-					"_postman_id": "52121b9b-3b86-4d48-96f6-d8265aaf432a",
+					"_postman_id": "f3afa4be-2a32-4568-8ec8-185bedb66892",
 					"name": "actuator auditevents",
 					"request": {
 						"method": "GET",
@@ -330,7 +330,7 @@
 					"response": []
 				},
 				{
-					"_postman_id": "c5b7ddb5-65c1-4645-a0ec-5141c575ae1d",
+					"_postman_id": "16acb75c-729c-4e67-834e-5095cd8f4e07",
 					"name": "actuator conditions",
 					"request": {
 						"method": "GET",
@@ -359,7 +359,7 @@
 					"response": []
 				},
 				{
-					"_postman_id": "53ac72a3-8897-44f9-a0c0-f62fcb6fb4fa",
+					"_postman_id": "1d13ecae-5a36-4a57-b77b-a671e28924ed",
 					"name": "actuator heapdump (postman crushes)",
 					"request": {
 						"method": "GET",
@@ -388,7 +388,7 @@
 					"response": []
 				},
 				{
-					"_postman_id": "0ac7f92b-fa01-4523-801a-f597e3516ab0",
+					"_postman_id": "38daeb47-be1e-4765-8bb8-ded1b60aff36",
 					"name": "actuator info",
 					"request": {
 						"method": "GET",
@@ -417,7 +417,7 @@
 					"response": []
 				},
 				{
-					"_postman_id": "316ca860-a4d2-4f8e-a432-24a9ee448b60",
+					"_postman_id": "e08946ac-b348-4bc5-a654-fe24d69f806b",
 					"name": "actuator threaddump",
 					"request": {
 						"method": "GET",
@@ -446,7 +446,7 @@
 					"response": []
 				},
 				{
-					"_postman_id": "de7c74b7-5282-43aa-9077-fa9032d555c7",
+					"_postman_id": "2560dbe8-9866-4c66-a0ba-6b821ab439c6",
 					"name": "actuator metrics (list)",
 					"request": {
 						"method": "GET",
@@ -475,7 +475,7 @@
 					"response": []
 				},
 				{
-					"_postman_id": "c482329b-cd92-4471-b34c-9eacc7572a26",
+					"_postman_id": "d780ad28-7565-414e-b02d-9d82c729298c",
 					"name": "actuator metrics - uptime",
 					"request": {
 						"method": "GET",
@@ -505,7 +505,7 @@
 					"response": []
 				},
 				{
-					"_postman_id": "1dbb02fe-6aa5-47d0-ba5b-d0adc9236df7",
+					"_postman_id": "e8fc450b-acc7-4877-84ab-fae8658a221c",
 					"name": "actuator scheduledtasks",
 					"request": {
 						"method": "GET",
@@ -534,7 +534,7 @@
 					"response": []
 				},
 				{
-					"_postman_id": "51878b8d-c77b-4849-bef2-828178ab8ed7",
+					"_postman_id": "c159fcdc-a27f-44cc-b131-ce27c8579847",
 					"name": "actuator httptrace (call history)",
 					"request": {
 						"method": "GET",
@@ -563,7 +563,7 @@
 					"response": []
 				},
 				{
-					"_postman_id": "983c0a55-2bdb-4b88-b401-99ac8c51d6f7",
+					"_postman_id": "75dc4a47-f9cc-4b14-9abd-5c1cbc75ed37",
 					"name": "actuator refresh",
 					"request": {
 						"method": "POST",
@@ -592,7 +592,7 @@
 					"response": []
 				},
 				{
-					"_postman_id": "ef59229c-ad2e-409d-916e-8dcfbd2675cc",
+					"_postman_id": "ac710fbe-6165-46e7-aa32-890ee6e0e474",
 					"name": "actuator features",
 					"request": {
 						"method": "GET",
@@ -621,7 +621,7 @@
 					"response": []
 				},
 				{
-					"_postman_id": "05f3d15a-9007-401c-8b07-2bcbbbd7dc29",
+					"_postman_id": "feff804f-8591-43ba-857e-c46feeda1e29",
 					"name": "actuator service-registry",
 					"request": {
 						"method": "GET",
@@ -650,7 +650,7 @@
 					"response": []
 				},
 				{
-					"_postman_id": "3d926654-1e2a-4979-924e-809cd58be662",
+					"_postman_id": "dbad8221-21f6-4d8f-9de8-adf98d7dad88",
 					"name": "actuator bindings (stream)",
 					"request": {
 						"method": "GET",
@@ -679,7 +679,7 @@
 					"response": []
 				},
 				{
-					"_postman_id": "077d44e4-29e9-4cf8-b271-e98bd392c692",
+					"_postman_id": "7a72a3e9-2cbf-4b4e-9d97-744d76766988",
 					"name": "actuator channels (stream)",
 					"request": {
 						"method": "GET",
@@ -710,7 +710,7 @@
 			]
 		},
 		{
-			"_postman_id": "5a6bb4a4-0046-4ae3-90fe-22a2865bde1d",
+			"_postman_id": "84b3c927-e087-46dc-b48f-cdcd24316a03",
 			"name": "GET license 1 through Gateway - Rest template - eureka routes",
 			"request": {
 				"method": "GET",
@@ -741,7 +741,7 @@
 			},
 			"response": [
 				{
-					"id": "fe8e8fe7-d75c-4289-b55c-349f2192d2bb",
+					"id": "631e5dbb-e021-4789-93d6-f7cd1037ca09",
 					"name": "GET license 1",
 					"originalRequest": {
 						"method": "GET",
@@ -796,7 +796,7 @@
 					"body": "{\"id\":\"1\",\"organizationId\":\"1\",\"productName\":\"Teleco\",\"licenseType\":\"Seat\"}"
 				},
 				{
-					"id": "94de167b-9ab1-4cdd-9cec-3de36a0229d7",
+					"id": "16a78049-85e5-4dbf-862d-a705219f4050",
 					"name": "GET license f3831f8c-c338-4ebe-a82a-e2fc1d1ff78a",
 					"originalRequest": {
 						"method": "GET",
@@ -856,7 +856,152 @@
 			]
 		},
 		{
-			"_postman_id": "e9baed7c-9a35-4a76-91cd-8c1071280f5e",
+			"_postman_id": "77d86890-93e3-4dfb-9c90-21dc34456756",
+			"name": "GET eureka routes",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer {{access_token}}"
+					}
+				],
+				"body": {},
+				"url": {
+					"raw": "http://localhost:5555/api/licensingservice/v1/tools/eureka/services",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5555",
+					"path": [
+						"api",
+						"licensingservice",
+						"v1",
+						"tools",
+						"eureka",
+						"services"
+					]
+				}
+			},
+			"response": [
+				{
+					"id": "c9d45d9d-827e-477f-9525-8f7c1fc2cb92",
+					"name": "GET license f3831f8c-c338-4ebe-a82a-e2fc1d1ff78a",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"body": {},
+						"url": {
+							"raw": "http://0.0.0.0:{{portLicSrv}}/v1/organizations/e254f8c-c442-4ebe-a82a-e2fc1d1ff78a/licenses/f3831f8c-c338-4ebe-a82a-e2fc1d1ff78a",
+							"protocol": "http",
+							"host": [
+								"0",
+								"0",
+								"0",
+								"0"
+							],
+							"port": "{{portLicSrv}}",
+							"path": [
+								"v1",
+								"organizations",
+								"e254f8c-c442-4ebe-a82a-e2fc1d1ff78a",
+								"licenses",
+								"f3831f8c-c338-4ebe-a82a-e2fc1d1ff78a"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json;charset=UTF-8",
+							"name": "Content-Type",
+							"description": "The mime type of this content"
+						},
+						{
+							"key": "Date",
+							"value": "Thu, 07 Jun 2018 14:49:12 GMT",
+							"name": "Date",
+							"description": "The date and time that the message was sent"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked",
+							"name": "Transfer-Encoding",
+							"description": "The form of encoding used to safely transfer the entity to the user. Currently defined methods are: chunked, compress, deflate, gzip, identity."
+						},
+						{
+							"key": "X-Application-Context",
+							"value": "licensingservice:default",
+							"name": "X-Application-Context",
+							"description": "Custom header"
+						}
+					],
+					"cookie": [],
+					"body": "{\"licenseId\":\"f3831f8c-c338-4ebe-a82a-e2fc1d1ff78a\",\"organizationId\":\"e254f8c-c442-4ebe-a82a-e2fc1d1ff78a\",\"productName\":\"customer-crm-co\",\"licenseType\":\"user\",\"licenseMax\":100,\"licenseAllocated\":5,\"comment\":\"I AM IN THE DEFAULT\"}"
+				},
+				{
+					"id": "2e388ed7-cdd9-4d8c-925b-d11286b66a9c",
+					"name": "GET license 1",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"body": {},
+						"url": {
+							"raw": "http://localhost:8080/v1/organizations/1/licenses/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"v1",
+								"organizations",
+								"1",
+								"licenses",
+								"1"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json;charset=UTF-8",
+							"name": "Content-Type",
+							"description": "The mime type of this content"
+						},
+						{
+							"key": "Date",
+							"value": "Thu, 07 Jun 2018 09:58:59 GMT",
+							"name": "Date",
+							"description": "The date and time that the message was sent"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked",
+							"name": "Transfer-Encoding",
+							"description": "The form of encoding used to safely transfer the entity to the user. Currently defined methods are: chunked, compress, deflate, gzip, identity."
+						},
+						{
+							"key": "X-Application-Context",
+							"value": "application",
+							"name": "X-Application-Context",
+							"description": "Custom header"
+						}
+					],
+					"cookie": [],
+					"body": "{\"id\":\"1\",\"organizationId\":\"1\",\"productName\":\"Teleco\",\"licenseType\":\"Seat\"}"
+				}
+			]
+		},
+		{
+			"_postman_id": "696bdbac-0d66-45bd-a7d2-1045c836b237",
 			"name": "GET license 2 through Gateway - Rest Template - eureka routes",
 			"request": {
 				"method": "GET",
@@ -887,7 +1032,7 @@
 			},
 			"response": [
 				{
-					"id": "bae24f23-e133-4357-992b-f16d09959571",
+					"id": "2977eeeb-8e99-40db-9d35-feda686934d0",
 					"name": "GET license f3831f8c-c338-4ebe-a82a-e2fc1d1ff78a",
 					"originalRequest": {
 						"method": "GET",
@@ -945,7 +1090,7 @@
 					"body": "{\"licenseId\":\"f3831f8c-c338-4ebe-a82a-e2fc1d1ff78a\",\"organizationId\":\"e254f8c-c442-4ebe-a82a-e2fc1d1ff78a\",\"productName\":\"customer-crm-co\",\"licenseType\":\"user\",\"licenseMax\":100,\"licenseAllocated\":5,\"comment\":\"I AM IN THE DEFAULT\"}"
 				},
 				{
-					"id": "99cd1946-ab71-4cee-8906-df62120fa279",
+					"id": "7190e2ff-257f-482c-8c94-7a64bbbba446",
 					"name": "GET license 1",
 					"originalRequest": {
 						"method": "GET",
@@ -1002,7 +1147,7 @@
 			]
 		},
 		{
-			"_postman_id": "65e36e50-2ed0-4145-8687-de0586b8cb25",
+			"_postman_id": "59ba003f-460e-4222-8613-99c6a1cbed66",
 			"name": "Refresh config (actuator)",
 			"request": {
 				"method": "POST",
@@ -1031,7 +1176,7 @@
 			"response": []
 		},
 		{
-			"_postman_id": "f1dc611f-135e-443e-a850-783b5f5255bb",
+			"_postman_id": "e9cf134f-4a07-4b34-8d2e-246068531f45",
 			"name": "GET licenses by Org w Gateway (with timeout test)",
 			"request": {
 				"method": "GET",
@@ -1062,7 +1207,7 @@
 			},
 			"response": [
 				{
-					"id": "98a007c9-1caf-4de1-8800-a32dfa267d48",
+					"id": "f6392be8-7664-44ba-bc27-02c6124eb1ce",
 					"name": "GET license 1",
 					"originalRequest": {
 						"method": "GET",
@@ -1117,7 +1262,7 @@
 					"body": "{\"id\":\"1\",\"organizationId\":\"1\",\"productName\":\"Teleco\",\"licenseType\":\"Seat\"}"
 				},
 				{
-					"id": "e54797a4-1ada-4934-be0c-f6721a45888a",
+					"id": "7b756e21-8ff0-4f5f-a2aa-dfb2c04d58dd",
 					"name": "GET license f3831f8c-c338-4ebe-a82a-e2fc1d1ff78a",
 					"originalRequest": {
 						"method": "GET",
@@ -1177,7 +1322,7 @@
 			]
 		},
 		{
-			"_postman_id": "292c0118-61de-40b1-9573-4a38ca321b93",
+			"_postman_id": "b2c40bba-3c24-4c1f-9b6d-34a2b5dbd128",
 			"name": "GET licenses with client type Discovery",
 			"request": {
 				"method": "GET",
@@ -1212,7 +1357,7 @@
 			},
 			"response": [
 				{
-					"id": "9e0ac53e-c034-4c39-a61b-7a890e17b221",
+					"id": "3c0a2465-c46a-46fe-bd46-e29cebf028a3",
 					"name": "GET license f3831f8c-c338-4ebe-a82a-e2fc1d1ff78a",
 					"originalRequest": {
 						"method": "GET",
@@ -1270,7 +1415,7 @@
 					"body": "{\"licenseId\":\"f3831f8c-c338-4ebe-a82a-e2fc1d1ff78a\",\"organizationId\":\"e254f8c-c442-4ebe-a82a-e2fc1d1ff78a\",\"productName\":\"customer-crm-co\",\"licenseType\":\"user\",\"licenseMax\":100,\"licenseAllocated\":5,\"comment\":\"I AM IN THE DEFAULT\"}"
 				},
 				{
-					"id": "17aeb2a6-2b29-44bf-9cf1-8bda41afad2f",
+					"id": "8e2c45b1-da61-4490-b98f-1600acc25c4c",
 					"name": "GET license 1",
 					"originalRequest": {
 						"method": "GET",
@@ -1327,7 +1472,7 @@
 			]
 		},
 		{
-			"_postman_id": "ce93d3a8-4a8d-438f-b89d-83e7ab2e2a06",
+			"_postman_id": "66a5523b-fb96-41be-b8b3-140c2d02c7ef",
 			"name": "GET licenses with client type Feign",
 			"request": {
 				"method": "GET",
@@ -1362,7 +1507,7 @@
 			},
 			"response": [
 				{
-					"id": "0290a199-d1e4-437f-a0e0-c0b1d00d4511",
+					"id": "c3b6db79-a83e-4916-96f3-b75d1e60d2a7",
 					"name": "GET license f3831f8c-c338-4ebe-a82a-e2fc1d1ff78a",
 					"originalRequest": {
 						"method": "GET",
@@ -1420,7 +1565,7 @@
 					"body": "{\"licenseId\":\"f3831f8c-c338-4ebe-a82a-e2fc1d1ff78a\",\"organizationId\":\"e254f8c-c442-4ebe-a82a-e2fc1d1ff78a\",\"productName\":\"customer-crm-co\",\"licenseType\":\"user\",\"licenseMax\":100,\"licenseAllocated\":5,\"comment\":\"I AM IN THE DEFAULT\"}"
 				},
 				{
-					"id": "7faff68a-e4ab-4833-aa06-88cb267cd90d",
+					"id": "d4eab448-2b48-4a3a-8d89-abd1333dec5a",
 					"name": "GET license 1",
 					"originalRequest": {
 						"method": "GET",
@@ -1477,7 +1622,7 @@
 			]
 		},
 		{
-			"_postman_id": "51d9c5cc-d947-485c-a3cd-e41f5db39fae",
+			"_postman_id": "1a167d52-6770-4d7c-af4f-702498be2f8a",
 			"name": "DELETE license",
 			"request": {
 				"method": "DELETE",
@@ -1508,7 +1653,7 @@
 			},
 			"response": [
 				{
-					"id": "8bd46951-4764-4cc9-a8ca-6dc0dec45b50",
+					"id": "623a0879-1c12-48c4-9e46-eb67849c24a8",
 					"name": "GET license 1",
 					"originalRequest": {
 						"method": "GET",
