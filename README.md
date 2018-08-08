@@ -89,10 +89,10 @@ A quick test to see if you have the JCE Unlimited Strength Jurisdiction Policy f
 Installing JCE libs for oracle JDK (adjust for your JDK dir):
 
 cd /tmp/ && \
-	curl -k -LO "http://download.oracle.com/otn-pub/java/jce/8/jce_policy-8.zip" -H 'Cookie: oraclelicense=accept-securebackup-cookie' && \
-	unzip jce_policy-8.zip && \
-	rm jce_policy-8.zip && \
-	yes | sudo cp -v /tmp/UnlimitedJCEPolicyJDK8/*.jar /usr/lib/jvm/oracle-jdk-8/jre/lib/security/
+curl -k -LO "http://download.oracle.com/otn-pub/java/jce/8/jce_policy-8.zip" -H 'Cookie: oraclelicense=accept-securebackup-cookie' && \
+unzip jce_policy-8.zip && \
+rm jce_policy-8.zip && \
+yes | sudo cp -v /tmp/UnlimitedJCEPolicyJDK8/*.jar /usr/lib/jvm/oracle-jdk-8/jre/lib/security/
 
 
 - In 'Run Configurations' of Spring Boot apps: 
