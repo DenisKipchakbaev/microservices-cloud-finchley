@@ -1,4 +1,4 @@
-Spring Cloud 2.0 sample microservices project.
+Microservices on Spring Cloud 2.0 sample project.
 
 Based on Spring Cloud Netflix stack.
 
@@ -9,27 +9,32 @@ Migrated to Spring Cloud Finchley release (2.0.x) and enhanced with additional m
 Project modules configured to run as docker containers as well as separate Spring Boot applications.
 
 # Introduction
-This example project include:
+This example project includes:
 
 Architectural nodes:
 
-1.  Spring Cloud Config server that is deployed as Docker container and can manage a services configuration information using a file system or GitHub-based repository.
-2.  Eureka server running as a Spring-Cloud based service.  This service will allow multiple service instances to register with it.  Clients that need to call a service will use Eureka to lookup the physical location of the target service.
-3.  Zuul API Gateway.  All of our microservices can be routed through the gateway and have pre, response and post policies enforced on the calls.
-4.  Spring Cloud based OAuth2 authentication service that can issue and validate OAuth2 tokens.
-5.  Zipkin distributed tracing platform.
-6.  Kafka message bus to transport messages between services.
-7.  Zookeeper server utilized by Apache Kafka. ZooKeeper is a centralized service for maintaining configuration information, naming, providing distributed synchronization, and providing group services.
-8.  Postgres SQL database used to hold the business data.
-9.  Redis service to act as a distributed cache.
-10. logspout module to aggregate services logs and redirect them to Papertrail service.
-11. Adminer tool to manage database schema.
-12. Portainer management tool. Portainer is an open-source lightweight management UI which allows you to easily manage your Docker hosts or Swarm clusters.
-13. Turbine Stream server used to aggreagate hystrix streams of the business services to provide joint information in Hystrix Dashboard.
-14. Hystrix Dashboard. Monitoring of Hystrix metrics in real time
-15. Spring Boot Admin. UI tool for monitoring and managing Spring Boot microservices registered with Eureka.
+1.  **Spring Cloud Configuration Server** that is deployed as Docker container and can manage a services configuration information using a file system or GitHub-based repository.
+2.  **Eureka** Server running as a Spring-Cloud based service.  This service will allow multiple service instances to register with it.  Clients that need to call a service will use Eureka to lookup the physical location of the target service.
+3.  **Zuul API Gateway**.  All of our microservices can be routed through the gateway and have pre, response and post policies enforced on the calls.
+4.  Spring Cloud based **OAuth2 Authentication Server** that can issue and validate OAuth2 tokens.
+5.  **Kafka Message Bus** to transport messages between services.
+6.  **Zookeeper** Server utilized by Apache Kafka. ZooKeeper is a centralized service for maintaining configuration information, naming, providing distributed synchronization, and providing group services.
+7.  **PostgreSQL** database used to hold the business data.
+8.  **Redis** service to act as a distributed cache.
 
-Custom sample business nodes:
+
+Monitoring and management nodes:
+
+9.  **Zipkin** distributed tracing platform.
+10. **logspout** module to aggregate services logs and redirect them to Papertrail service.
+11. **Adminer** tool to manage database schema.
+12. **Portainer** management tool. Portainer is an open-source lightweight management UI which allows you to easily manage your Docker hosts or Swarm clusters.
+13. **Turbine Stream** server used to aggreagate hystrix streams of the business services to provide joint information in Hystrix Dashboard.
+14. **Hystrix Dashboard**. Monitoring of Hystrix metrics in real time
+15. **Spring Boot Admin**. UI tool for monitoring and managing Spring Boot microservices registered with Eureka.
+
+
+Custom sample business modules:
 
 16.  A licensing service that will manage licensing data used within a company.
 17.  An organization service that will manage client organization data used within a company.
