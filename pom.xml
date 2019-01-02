@@ -32,7 +32,7 @@
 		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
 		<java.version>1.8</java.version>
 		<spring-cloud.version>Finchley.RELEASE</spring-cloud.version>
-		<dockerfile-maven-version>1.4.3</dockerfile-maven-version>
+		<dockerfile-maven-version>1.4.9</dockerfile-maven-version>
 		<docker.repository.name>kipc</docker.repository.name>
 	</properties>
 
@@ -47,7 +47,40 @@
 			</dependency>
 		</dependencies>
 	</dependencyManagement>
+	
 	<build>
+		<pluginManagement>
+			<plugins>
+				<!--Integrate building docker image steps with maven steps, mvn package will build a docker image,
+				mvn deploy will push the image to the repo -->
+				<plugin>
+				  <groupId>com.spotify</groupId>
+				  <artifactId>dockerfile-maven-plugin</artifactId>
+				  <version>${dockerfile-maven-version}</version>
+				  <executions>
+				    <execution>
+				      <id>default</id>
+				      <goals>
+				        <goal>build</goal>
+			        	<goal>push</goal>
+				      </goals>
+				    </execution>
+				  </executions>
+				  <configuration>
+				    <repository>${docker.repository.name}/${project.name}</repository>
+				    <tag>${project.version}</tag>
+				    <buildArgs>
+				      <JAR_FILE>${project.build.finalName}.jar</JAR_FILE>
+				      <PROJECT_NAME>${project.name}</PROJECT_NAME>
+				      <DEVELOPER_NAME>${project.developers[0].name}</DEVELOPER_NAME>
+				      <!-- in case of using proxy - pass proxy url to buildArgs for building containers, 
+				      e.g in Alpine to connect to internet when executing 'apk update...' -->
+				      <HTTP_PROXY>${env.http_proxy}</HTTP_PROXY>
+				    </buildArgs>
+				  </configuration>
+				</plugin>
+			</plugins>
+		</pluginManagement>
 		<plugins>
 			<!-- Using the Resources plugin to filter run.sh, 
 			it inserts actual JAR filename and directory name for each module -->
@@ -87,33 +120,9 @@
 					</execution>
 				</executions>
 			</plugin>
-			<!--Integrate building docker image steps with maven steps, mvn package will build a docker image,
-			mvn deploy will push the image to the repo -->
-			<plugin>
-			  <groupId>com.spotify</groupId>
-			  <artifactId>dockerfile-maven-plugin</artifactId>
-			  <version>${dockerfile-maven-version}</version>
-			  <executions>
-			    <execution>
-			      <id>default</id>
-			      <goals>
-			        <goal>build</goal>
-		        	<goal>push</goal>
-			      </goals>
-			    </execution>
-			  </executions>
-			  <configuration>
-			    <repository>${docker.repository.name}/${project.name}</repository>
-			    <tag>${project.version}</tag>
-			    <buildArgs>
-			      <JAR_FILE>${project.build.finalName}.jar</JAR_FILE>
-			      <PROJECT_NAME>${project.name}</PROJECT_NAME>
-			      <DEVELOPER_NAME>${project.developers[0].name}</DEVELOPER_NAME>
-			    </buildArgs>
-			  </configuration>
-			</plugin>
 		</plugins>
 	</build>
+	
 	<modules>
 		<module>auth-server-finchley</module>
 		<module>config-server-finchley</module>
