@@ -73,7 +73,7 @@
 				      <JAR_FILE>${project.build.finalName}.jar</JAR_FILE>
 				      <PROJECT_NAME>${project.name}</PROJECT_NAME>
 				      <DEVELOPER_NAME>${project.developers[0].name}</DEVELOPER_NAME>
-				      <!-- in case of using proxy - pass proxy url to buildArgs for building containers, 
+				      <!-- in case of using proxy - pass proxy url from environment variable to buildArgs for building containers, 
 				      e.g in Alpine to connect to internet when executing 'apk update...' -->
 				      <HTTP_PROXY>${env.http_proxy}</HTTP_PROXY>
 				    </buildArgs>
