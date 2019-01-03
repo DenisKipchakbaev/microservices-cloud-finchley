@@ -1,6 +1,14 @@
 logging.file: target/config-server.log
 
 server.port: ${PORT:8888}
+#server.use-forward-headers: true
+
+logging:
+  file: target/authserver.log
+  level:
+    com.netflix: DEBUG
+    org.springframework.web: DEBUG
+    es.in2.cloud: DEBUG
 
 spring:
   cloud:
