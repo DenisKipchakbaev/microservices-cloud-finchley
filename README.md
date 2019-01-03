@@ -46,7 +46,7 @@ Custom sample business modules:
 0.  [Linux Host]
 1.  [Java 8]
 2.	[Apache Maven] (http://maven.apache.org).
-3.	[Docker] (http://docker.com).
+3.	[Docker] and [docker-compose] (http://docker.com).
 4.	[Git Client] (http://git-scm.com).
 
 # Configuration
@@ -57,9 +57,9 @@ Fork it for your own projects.
 # Building the Docker Images
 To build the code examples as a docker image, open a command-line window, change to the directory where you have downloaded the source code.
 
-Run the following maven command.  This command will execute the compiling and packaging of the Spring Boot powered modules as well as create docker images harnessing [Spotify Dockerfile maven plugin] (https://github.com/spotify/dockerfile-maven) defined in the pom.xml file.  
+Run the following maven command.  This command will execute the compiling and packaging of the Spring Boot powered modules as well as create docker images harnessing [Spotify Dockerfile maven plugin] (https://github.com/spotify/dockerfile-maven) defined in the pom.xml file. Docker service should be running. 
    
-   **mvn clean package**
+   **mvn clean package -DskipTests**
 
 If everything builds successfully you should see a message indicating that the build was successful.
 
@@ -127,3 +127,45 @@ There is a collection of API calls in the directory /postman for Postman app
 # Push to Docker Hub
 
 To push to docker hub should specify goal dockerfile:push and dockerfile.username, dockerfile.password parameters in maven build properties. More info https://github.com/spotify/dockerfile-maven#authenticating-with-maven-pomxml
+
+
+# Proxy
+In case of running behind proxy, set http_proxy environment variable to pass proxy url to container building process. 
+Set proxy url in ~/.docker/config.json for use in running containers:
+
+Create or use file: ~/.docker/config.json
+
+{
+ "proxies":
+ {
+   "default":
+   {
+     "httpProxy": "http://[username:password@]yourproxy.com:8080",
+     "httpsProxy": "https://[username:password@]yourproxy.com:8080"
+   }
+ }
+}
+
+
+Set proxy url in docker's systemctl service properties to give access to internet to docker:
+
+sudo mkdir /etc/systemd/system/docker.service.d
+sudo nano /etc/systemd/system/docker.service.d/http-proxy.conf
+
+http-proxy.conf:
+
+[Service]
+Environment="HTTP_PROXY=[username:password@]yourproxy.com:8080/"
+Environment="HTTPS_PROXY=[username:password@]yourproxy.com:8080/"
+
+systemctl daemon-reload
+systemctl restart docker
+
+Test environment changed:
+systemctl show docker --property Environment
+
+Test docker proxy configuration:
+
+$ docker run hello-world
+Unable to find image 'hello-world:latest' locally
+latest: Pulling from library/hello-world
