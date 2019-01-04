@@ -9,8 +9,6 @@
 	<artifactId>spring-cloud-finchley-parent-pom</artifactId>
 	<packaging>pom</packaging>
 	
-
-
 	<name>spring-cloud-finchley-parent-pom</name>
 	<description>Parent Pom for Spring Cloud Finchley sample project</description>
 	
@@ -23,7 +21,7 @@
 	<parent>
 		<groupId>org.springframework.boot</groupId>
 		<artifactId>spring-boot-starter-parent</artifactId>
-		<version>2.0.3.RELEASE</version>
+		<version>2.0.6.RELEASE</version>
 		<relativePath /> <!-- lookup parent from repository -->
 	</parent>
 
@@ -31,7 +29,7 @@
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
 		<java.version>1.8</java.version>
-		<spring-cloud.version>Finchley.RELEASE</spring-cloud.version>
+		<spring-cloud.version>Finchley.SR2</spring-cloud.version>
 		<dockerfile-maven-version>1.4.9</dockerfile-maven-version>
 		<docker.repository.name>kipc</docker.repository.name>
 	</properties>
@@ -76,6 +74,8 @@
 				      <!-- in case of using proxy - pass proxy url from environment variable to buildArgs for building containers, 
 				      e.g in Alpine to connect to internet when executing 'apk update...' -->
 				      <HTTP_PROXY>${env.http_proxy}</HTTP_PROXY>
+				      <HTTPS_PROXY>${env.https_proxy}</HTTPS_PROXY>
+				      <NO_PROXY>${env.no_proxy}</NO_PROXY>
 				    </buildArgs>
 				  </configuration>
 				</plugin>
