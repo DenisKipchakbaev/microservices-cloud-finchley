@@ -12,6 +12,11 @@ echo "******* Eureka Server has started"
 echo "********************************************************"
 echo "Starting Configuration Service with Eureka Endpoint:  $EUREKASERVER_URI";
 echo "********************************************************"
-java -Djava.security.egd=file:/dev/./urandom 				\
-     -Deureka.client.serviceUrl.defaultZone=$EUREKASERVER_URI 		\
+java -Djava.security.egd=file:/dev/./urandom 							\
+     -Deureka.client.serviceUrl.defaultZone=$EUREKASERVER_URI 					\
+     -Dhttp.proxyHost=@http.proxy.host@ -Dhttp.proxyPort=@http.proxy.port@			\
+     -Dhttps.proxyHost=@https.proxy.host@ -Dhttps.proxyPort=@https.proxy.port@ 			\
+     -Dhttp.proxyUser=@http.proxy.username@ -Dhttp.proxyPassword=@http.proxy.password@		\
+     -Dhttps.proxyUser=@https.proxy.username@ -Dhttps.proxyPassword=@https.proxy.password@	\
+     -Dhttps.proxySet=true -Dhttp.proxySet=true							\
      -jar /usr/local/@project.name@/@project.build.finalName@.jar
