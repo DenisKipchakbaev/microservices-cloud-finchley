@@ -169,3 +169,7 @@ Test docker proxy configuration:
 $ docker run hello-world
 Unable to find image 'hello-world:latest' locally
 latest: Pulling from library/hello-world
+
+
+Set proxy parameters in java modules (microservices)
+Set 

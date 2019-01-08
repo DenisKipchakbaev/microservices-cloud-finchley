@@ -32,6 +32,11 @@
 		<spring-cloud.version>Finchley.SR2</spring-cloud.version>
 		<dockerfile-maven-version>1.4.9</dockerfile-maven-version>
 		<docker.repository.name>kipc</docker.repository.name>
+		
+		<!-- System proxy environment variables -->
+		<HTTP_PROXY>${env.http_proxy}</HTTP_PROXY>
+		<HTTPS_PROXY>${env.https_proxy}</HTTPS_PROXY>
+		<NO_PROXY>${env.no_proxy}</NO_PROXY>
 	</properties>
 
 	<dependencyManagement>
@@ -73,9 +78,9 @@
 				      <DEVELOPER_NAME>${project.developers[0].name}</DEVELOPER_NAME>
 				      <!-- in case of using proxy - pass proxy url from environment variable to buildArgs for building containers, 
 				      e.g in Alpine to connect to internet when executing 'apk update...' -->
-				      <HTTP_PROXY>${env.http_proxy}</HTTP_PROXY>
-				      <HTTPS_PROXY>${env.https_proxy}</HTTPS_PROXY>
-				      <NO_PROXY>${env.no_proxy}</NO_PROXY>
+				      <HTTP_PROXY>${HTTP_PROXY}</HTTP_PROXY>
+				      <HTTPS_PROXY>${HTTPS_PROXY}</HTTPS_PROXY>
+				      <NO_PROXY>${NO_PROXY}</NO_PROXY>
 				    </buildArgs>
 				  </configuration>
 				</plugin>
