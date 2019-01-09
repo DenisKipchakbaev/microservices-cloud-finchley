@@ -171,7 +171,8 @@ Unable to find image 'hello-world:latest' locally
 latest: Pulling from library/hello-world
 
 
-Set proxy parameters in containerized java applications
+Set proxy parameters in containerized java applications.
+For example, necessery for config server to connect to Git repository.
 To configure proxy in Spring Boot applications set profile with proxy parameters in ~/.m2/settings.xml:
 <settings>
 	<profiles>
