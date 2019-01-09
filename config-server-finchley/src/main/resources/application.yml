@@ -6,8 +6,8 @@ server.port: ${PORT:8888}
 logging:
   file: target/authserver.log
   level:
-    com.netflix: DEBUG
-    org.springframework.web: DEBUG
+    com.netflix: WARN
+    org.springframework.web: WARN
     es.in2.cloud: DEBUG
 
 spring:
