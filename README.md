@@ -169,3 +169,29 @@ Test docker proxy configuration:
 $ docker run hello-world
 Unable to find image 'hello-world:latest' locally
 latest: Pulling from library/hello-world
+
+
+Set proxy parameters in containerized java applications.
+For example, necessery for config server to connect to Git repository.
+To configure proxy in Spring Boot applications set profile with proxy parameters in ~/.m2/settings.xml:
+<settings>
+	<profiles>
+                <profile>
+                        <id>proxy_params</id>
+                        <properties>
+                                <http.proxy.host>yourproxy.com</http.proxy.host>
+                                <http.proxy.port>8080</http.proxy.port>
+                                <http.proxy.username>user</http.proxy.username>
+                                <http.proxy.password>pass</http.proxy.password>
+                                <https.proxy.host>yourproxy.com</https.proxy.host>
+                                <https.proxy.port>8080</https.proxy.port>
+                                <https.proxy.username>user</https.proxy.username>
+                                <https.proxy.password>pass</https.proxy.password>
+                        </properties>
+                </profile>
+        </profiles>
+</settings>
+
+Run maven build with profile:
+**mvn clean package -P proxy_params -DskipTests**
+	
