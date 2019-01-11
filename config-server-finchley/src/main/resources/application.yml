@@ -15,6 +15,7 @@ spring:
     config:
       server:
         git:
+          timeout: 10
           uri: https://github.com/DenisKipchakbaev/cloud-finchley-config.git
           #skip-ssl-validation: true # Flag to indicate that SSL certificate validation should 
                                     # be bypassed when communicating with a repository 

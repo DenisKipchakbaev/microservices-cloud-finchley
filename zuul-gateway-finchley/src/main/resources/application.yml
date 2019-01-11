@@ -19,10 +19,10 @@ eureka:
 
 # ---START Temporary fix for bug with default hystrix timeouts
 #   https://github.com/spring-cloud/spring-cloud-netflix/issues/2606         
-zuul:
-  ribbonIsolationStrategy: THREAD
+#zuul:
+#  ribbonIsolationStrategy: THREAD
 
-hystrix.command.licensingservice.execution.isolation.thread.timeoutInMilliseconds: 6500
+#hystrix.command.licensingservice.execution.isolation.thread.timeoutInMilliseconds: 6500
 #hystrix.command.authserver.execution.isolation.thread.timeoutInMilliseconds: 25000
 # ---END Temporary fix
 
