@@ -16,7 +16,11 @@ eureka:
     serviceUrl:
         defaultZone: http://localhost:8761/eureka/
 
-
+zuul:
+  ribbon:
+    eager-load:
+      enabled: true # Fix for request timeouts on first hit (To try out)
+      
 # ---START Temporary fix for bug with default hystrix timeouts
 #   https://github.com/spring-cloud/spring-cloud-netflix/issues/2606         
 #zuul:
