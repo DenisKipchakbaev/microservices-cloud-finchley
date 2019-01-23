@@ -15,9 +15,9 @@ echo "Waiting for the kafka server to start on port  $(getPort $KAFKASERVER_PORT
 while ! `nc -z kafka $(getPort $KAFKASERVER_PORT)`; do sleep 10; done
 echo "******* Kafka Server has started"
 
-echo "Waiting for the ZIPKIN server to start  on port $ZIPKIN_PORT"
-while ! `nc -z zipkin $ZIPKIN_PORT`; do sleep 10; done
-echo "******* ZIPKIN has started"
+#echo "Waiting for the ZIPKIN server to start  on port $ZIPKIN_PORT"
+#while ! `nc -z zipkin $ZIPKIN_PORT`; do sleep 10; done
+#echo "******* ZIPKIN has started"
 
 echo "Starting Organization Service on port $SERVER_PORT"
 echo "Using Configuration Server: $CONFIGSERVER_URI"

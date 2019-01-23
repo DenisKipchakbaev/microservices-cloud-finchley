@@ -21,11 +21,11 @@ echo "********************************************************"
 while ! `nc -z kafka $(getPort $KAFKASERVER_PORT)`; do sleep 10; done
 echo "******* Kafka Server has started"
 
-echo "********************************************************"
-echo "Waiting for the ZIPKIN server to start  on port $ZIPKIN_PORT"
-echo "********************************************************"
-while ! `nc -z zipkin $ZIPKIN_PORT`; do sleep 10; done
-echo "******* ZIPKIN has started"
+#echo "********************************************************"
+#echo "Waiting for the ZIPKIN server to start  on port $ZIPKIN_PORT"
+#echo "********************************************************"
+#while ! `nc -z zipkin $ZIPKIN_PORT`; do sleep 10; done
+#echo "******* ZIPKIN has started"
 
 echo "********************************************************"
 echo "Using profile: $PROFILE				      "
