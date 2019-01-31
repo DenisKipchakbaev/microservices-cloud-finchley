@@ -6,11 +6,11 @@
 
 	<groupId>es.in2.cloud</groupId>
 	<version>0.0.1</version>
-	<artifactId>spring-cloud-finchley-parent-pom</artifactId>
+	<artifactId>mxs-spring-cloud-parent-pom</artifactId>
 	<packaging>pom</packaging>
 	
-	<name>spring-cloud-finchley-parent-pom</name>
-	<description>Parent Pom for Spring Cloud Finchley sample project</description>
+	<name>mxs-spring-cloud-parent-pom</name>
+	<description>Parent Pom for Spring Cloud sample project</description>
 	
 	<developers>
 		<developer>
@@ -129,15 +129,15 @@
 	</build>
 	
 	<modules>
-		<module>auth-server-finchley</module>
-		<module>config-server-finchley</module>
-		<module>eureka-server-finchley</module>
-		<module>zuul-gateway-finchley</module>
-		<module>licensing-service-finchley</module>
-		<module>organization-service-finchley</module>
-		<module>spring-boot-admin</module>
-		<module>hystrix-dashboard</module>
-		<module>turbine-stream</module>
+		<module>mxs-auth-server</module>
+		<module>mxs-config-server</module>
+		<module>mxs-eureka-server</module>
+		<module>mxs-zuul-gateway</module>
+		<module>mxs-licensing-service</module>
+		<module>mxs-organization-service</module>
+		<module>mxs-spring-boot-admin</module>
+		<module>mxs-hystrix-dashboard</module>
+		<module>mxs-turbine-stream</module>
 	</modules>
 
 </project>

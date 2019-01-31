@@ -4,15 +4,15 @@
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 
-	<artifactId>auth-server-finchley</artifactId>
+	<artifactId>mxs-auth-server</artifactId>
 	<packaging>jar</packaging>
 
-	<name>auth-server-finchley</name>
+	<name>mxs-auth-server</name>
 	<description>Authentication Server</description>
 
 	<parent>
 		<groupId>es.in2.cloud</groupId>
-		<artifactId>spring-cloud-finchley-parent-pom</artifactId>
+		<artifactId>mxs-spring-cloud-parent-pom</artifactId>
 		<version>0.0.1</version>
 	</parent>
 
