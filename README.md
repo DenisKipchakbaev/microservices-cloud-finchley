@@ -51,7 +51,7 @@ Custom sample business modules:
 
 # Configuration
 Configuration server module uses Git repo to pull configuration parameters of service modules it is responsible for. Git configuration repo is: 
-https://github.com/DenisKipchakbaev/cloud-finchley-config
+https://github.com/DenisKipchakbaev/mxs-cloud-config.git
 Fork it for your own projects.
 
 # Building the Docker Images
