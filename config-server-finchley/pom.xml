@@ -10,7 +10,7 @@
 	<description>Configuration Server</description>
 
 	<parent>
-		<groupId>es.in2.cloud</groupId>
+		<groupId>me.kipc.mxs</groupId>
 		<artifactId>mxs-spring-cloud-parent-pom</artifactId>
 		<version>0.0.1</version>
 	</parent>
